@@ -1,0 +1,1203 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warasinee-cha.github.io/aiworker-prompt-lib/research/">
+      
+      
+        <link rel="prev" href="../decisions/">
+      
+      
+        <link rel="next" href="../creations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>7. ค้นคว้าหาข้อมูล - AI Worker - Prompt Lib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-header__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Worker - Prompt Lib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. ค้นคว้าหาข้อมูล
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-nav__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Worker - Prompt Lib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เริ่มต้น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    เริ่มต้น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เครื่องมือ AI ที่ควรรู้จัก
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talk-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    พูดกับ AI แทนการพิมพ์
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drafting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ร่างข้อความสื่อสาร
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. จัดการบันทึกการประชุม
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. ทำสไลด์นำเสนอ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. วิเคราะห์ข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ร่างเอกสารยาว
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. คิดและตัดสินใจ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. ค้นคว้าหาข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. ค้นคว้าหาข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ก่อนเริ่ม: เลือกเครื่องมือให้ตรงกับงาน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: ตั้งคำถามก่อนค้น
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: ค้นให้กว้าง แล้วคัดด้วยเกณฑ์
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 3: เขียนรายงานที่ตรวจสอบได้
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ถ้าใช้ Deep Research: แก้แผนก่อนปล่อยให้รัน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. สร้างชิ้นงาน
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ตัวอย่างผลงาน
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ตัวอย่างผลงาน
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations-showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    สไลด์ที่สร้างด้วย AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ก่อนเริ่ม: เลือกเครื่องมือให้ตรงกับงาน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: ตั้งคำถามก่อนค้น
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: ค้นให้กว้าง แล้วคัดด้วยเกณฑ์
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 3: เขียนรายงานที่ตรวจสอบได้
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ถ้าใช้ Deep Research: แก้แผนก่อนปล่อยให้รัน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">ค้นคว้าหาข้อมูลด้วย AI<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p>ผู้บริหารสั่งให้ "ไปหาข้อมูลมาหน่อย" — คุณเปิด AI ถามคำถามเดียว ได้คำตอบยาวสวยงามพร้อมลิงก์อ้างอิงครบ ใช้เวลา 3 นาที</p>
+<p><strong>ปัญหาคือคุณไม่รู้เลยว่าในนั้นอะไรเชื่อได้ อะไรเชื่อไม่ได้</strong></p>
+<p>หน้านี้ไม่ได้สอนแค่ "ใช้เครื่องมือไหน" — แต่สอน<strong>วิธีทำงานค้นคว้าให้ผลลัพธ์ปกป้องได้</strong> เมื่อมีคนถามว่า "ข้อมูลนี้มาจากไหน"</p>
+<div class="admonition danger">
+<p class="admonition-title">ปัญหาที่อันตรายที่สุดไม่ใช่การตอบผิด</p>
+<p>แต่คือ <strong>การอ้างอิงที่ดูน่าเชื่อถือแต่ไม่มีอยู่จริง</strong> — มีชื่อผู้เขียน มีปีที่ตีพิมพ์ มีเลขหน้า ครบทุกอย่าง ยกเว้นความจริง</p>
+<p>และการสั่ง chatbot ธรรมดาว่า <em>"ช่วยใส่แหล่งอ้างอิงด้วย"</em> คือวิธีที่ทำให้เกิดปัญหานี้มากที่สุด เพราะมันจะสร้างสิ่งที่ "ดูเหมือนแหล่งอ้างอิง" ขึ้นมา</p>
+</div>
+<hr />
+<h2 id="_1">ก่อนเริ่ม: เลือกเครื่องมือให้ตรงกับงาน<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><a href="https://www.perplexity.ai">Perplexity</a></th>
+<th>Deep Research (<a href="https://chatgpt.com">ChatGPT</a> / <a href="https://gemini.google.com">Gemini</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ความเร็ว</td>
+<td>ไม่กี่วินาที</td>
+<td>5–30 นาที</td>
+</tr>
+<tr>
+<td>ผลลัพธ์</td>
+<td>คำตอบสั้น + citation ทุกประโยค</td>
+<td>รายงานยาว วิเคราะห์เชิงลึก</td>
+</tr>
+<tr>
+<td>เหมาะกับ</td>
+<td>เช็คข้อเท็จจริงเร็ว ๆ ก่อนใส่สไลด์</td>
+<td>งานที่ต้องรายงานครบถ้วนหลายมิติ</td>
+</tr>
+<tr>
+<td>ต้องสมัครไหม</td>
+<td>ไม่ต้อง</td>
+<td>ต้องล็อกอิน</td>
+</tr>
+<tr>
+<td>โควตาฟรี</td>
+<td>ค้นหาไม่จำกัด</td>
+<td>ประมาณ 5 ครั้ง/เดือน</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ใช้เสริมกันได้</strong> — Perplexity สำรวจภาพรวมก่อน แล้ว Deep Research ลงลึกเมื่อรู้แล้วว่าจะเจาะมุมไหน</p>
+<p><em>(ราคาและโควตาเปลี่ยนบ่อย เช็คหน้าเว็บก่อนใช้จริง)</em></p>
+<hr />
+<h2 id="1">แบบฝึกหัดที่ 1: ตั้งคำถามก่อนค้น<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p><strong>คนส่วนใหญ่เริ่มจากพิมพ์หัวข้อ</strong> — "ขอข้อมูลเรื่อง AI ในมหาวิทยาลัย" แล้วได้บทความกว้าง ๆ ที่เอาไปใช้ตัดสินใจอะไรไม่ได้</p>
+<p><strong>งานค้นคว้าที่ดีเริ่มจากคำถามที่ตอบได้เป็นข้อ ๆ</strong> เพราะคำถามคือสิ่งที่กำหนดว่าเราจะรู้ได้อย่างไรว่า "ค้นเสร็จแล้ว"</p>
+<h3 id="ai_1">ให้ AI ช่วยแตกคำถามก่อน — ยังไม่ต้องค้น<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-prompt">ฉันเป็น [ตำแหน่ง] ที่ [หน่วยงาน]
+ผู้บริหารขอให้หาข้อมูลเรื่อง [หัวข้อ] เพื่อ [เอาไปทำอะไร เช่น ประกอบการตัดสินใจว่าจะลงทุนหรือไม่]
+
+ยังไม่ต้องค้นข้อมูล — ช่วยแตกเป็นคำถามย่อยก่อนว่า
+ถ้าจะตอบโจทย์นี้ให้ครบ ต้องรู้อะไรบ้าง (3–5 ข้อ)
+
+แต่ละคำถามต้องเป็นคำถามที่ &quot;ตอบได้ด้วยข้อมูล&quot; ไม่ใช่คำถามความเห็น
+และบอกด้วยว่าคำถามไหนน่าจะหาคำตอบยากที่สุด เพราะอะไร
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">ทำไมขั้นนี้คุ้มค่ากว่าที่คิด</p>
+<p>การมีคำถามเป็นข้อ ๆ ทำให้ <strong>ตรวจได้ว่าคำตอบที่ได้ครบหรือยัง</strong> — ถ้าค้นแบบไม่มีคำถาม เราจะรับสิ่งที่ AI เลือกให้ แล้วไม่มีทางรู้ว่ามันไม่ได้ตอบอะไร</p>
+<p>ข้อที่ AI บอกว่า "หายาก" มักเป็นข้อที่สำคัญที่สุด และเป็นจุดที่คนมักเผลอรับข้อมูลคุณภาพต่ำมาแทน</p>
+</div>
+<hr />
+<h2 id="2">แบบฝึกหัดที่ 2: ค้นให้กว้าง แล้วคัดด้วยเกณฑ์<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">ค้นหลายมุม อย่าถามครั้งเดียวจบ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>คำถามเดียวได้ผลลัพธ์ชุดเดียว — ลองถามด้วยคำที่ต่างกัน 3–4 รอบ (ภาษาไทย/อังกฤษ · คำทางการ/คำที่คนใช้จริง) จะเจอแหล่งที่รอบแรกไม่ขึ้นมาเลย</p>
+<pre><code class="language-prompt">ช่วยค้นหาข้อมูลเพื่อตอบคำถามนี้: [คำถามข้อที่ 1 จากแบบฝึกหัดที่ 1]
+
+เงื่อนไข:
+- ทุกข้อต้องมีลิงก์แหล่งอ้างอิงที่เปิดตรวจได้ พร้อมปีของเอกสาร
+- ระบุด้วยว่าแหล่งนั้นเป็นประเภทไหน: งานวิจัย / เอกสารราชการ / ข่าว / บล็อก / เอกสารการตลาดของบริษัท
+- แยกให้ชัดว่าอะไรคือข้อเท็จจริงที่มีหลักฐาน กับอะไรคือการคาดการณ์หรือความเห็น
+- ถ้าข้อไหนหาไม่เจอหรือไม่แน่ใจ ให้บอกตรง ๆ อย่าเดา
+</code></pre>
+<h3 id="_3">จัดชั้นแหล่งข้อมูลก่อนเชื่อ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>นี่คือทักษะที่ทำให้งานค้นคว้าต่างกันมากที่สุด — <strong>ไม่ใช่ทุกแหล่งมีน้ำหนักเท่ากัน แม้จะพูดเรื่องเดียวกัน</strong></p>
+<table>
+<thead>
+<tr>
+<th>ชั้น</th>
+<th>ตัวอย่างแหล่ง</th>
+<th>ใช้อย่างไร</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ชั้นหนึ่ง</strong></td>
+<td>งานวิจัยที่ผ่าน peer review · สถิติและเอกสารทางการของหน่วยงานรัฐ · รายงานขององค์กรระหว่างประเทศ (UNESCO, OECD, World Bank) · รายงานสถาบันวิจัยที่เปิดเผยวิธีการเก็บข้อมูล</td>
+<td>ใช้อ้างอิงได้เลย</td>
+</tr>
+<tr>
+<td><strong>ชั้นสอง</strong></td>
+<td>สื่อคุณภาพที่ทำข่าวเชิงลึก · รายงานอุตสาหกรรมที่บอกวิธีการสำรวจ · preprint ที่ยังไม่ผ่าน peer review</td>
+<td>ใช้ได้เมื่อชั้นหนึ่งไม่พอ แต่ควรระบุว่ามาจากไหน</td>
+</tr>
+<tr>
+<td><strong>ชั้นสาม</strong></td>
+<td>บล็อกส่วนตัว · โพสต์โซเชียล · เอกสารการตลาดของผู้ขาย · บทความ SEO ที่ไม่มีที่มา</td>
+<td><strong>หลีกเลี่ยง</strong> ถ้าจำเป็นต้องใช้ ต้องบอกให้ชัดว่าเป็นแหล่งประเภทนี้</td>
+</tr>
+</tbody>
+</table>
+<p><strong>กฎ 3 ข้อที่ใช้ได้กับทุกแหล่ง:</strong></p>
+<ol>
+<li><strong>ตามกลับไปที่ต้นทางเสมอ</strong> — ข่าวที่สรุปงานวิจัย ไม่เท่ากับตัวงานวิจัย ถ้าจะอ้างตัวเลข ต้องเปิดงานต้นฉบับ</li>
+<li><strong>ดูวันที่ทุกครั้ง</strong> — แหล่งที่ไม่ระบุวันที่ ให้ตั้งข้อสงสัยไว้ก่อน ข้อมูลนโยบายและตลาดเก่าเร็วมาก</li>
+<li><strong>ดูว่าใครจ่ายเงินให้ทำ</strong> — รายงานที่ผู้ขายเทคโนโลยีทำเอง มักสรุปว่าเทคโนโลยีนั้นคุ้มค่า</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">เจอบทความที่ดูดีแต่ไม่รู้ว่าใครเขียน</p>
+<p>ตอนนี้มีบทความจำนวนมากที่ AI สร้างขึ้นเพื่อดันอันดับค้นหา — หน้าตาเรียบร้อย มีตัวเลขเยอะ แต่ไม่มีที่มาและไม่มีคนรับผิดชอบ</p>
+<p><strong>วิธีสังเกต:</strong> ไม่มีชื่อผู้เขียน · ไม่มีวันที่ · ตัวเลขไม่มีลิงก์กลับไปต้นทาง · ชื่อเว็บไม่คุ้นและไม่ใช่หน่วยงานที่ตรวจสอบได้</p>
+</div>
+<h3 id="_4">คลิกเปิดทุกลิงก์ที่จะเอาไปใช้<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<!-- TODO: ใส่ภาพ Perplexity ที่มี citation กำกับแต่ละประโยค + ภาพตอนคลิกเปิดดูต้นทาง -->
+
+<div class="admonition danger">
+<p class="admonition-title">misgrounded citation — อันตรายกว่าการตอบผิดตรง ๆ</p>
+<p>บางครั้งลิงก์<strong>มีอยู่จริง</strong> เว็บ<strong>เปิดได้จริง</strong> แต่เนื้อหาในนั้น<strong>ไม่ได้พูดสิ่งที่ AI อ้าง</strong></p>
+<p>อาการนี้อันตรายกว่าการตอบผิดธรรมดา เพราะมันสร้างภาพลวงว่าตรวจสอบแล้ว — ต้องเปิดอ่านย่อหน้านั้นจริงถึงจะรู้</p>
+</div>
+<p><strong>เช็ค 3 ชั้นตามลำดับ:</strong> ลิงก์เปิดได้ไหม → เนื้อหาตรงกับที่อ้างไหม → เป็นต้นทางหรือเป็นการอ้างต่อ</p>
+<hr />
+<h2 id="3">แบบฝึกหัดที่ 3: เขียนรายงานที่ตรวจสอบได้<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>รายงานค้นคว้าที่ดีไม่ได้วัดกันที่ความยาว แต่วัดกันที่ <strong>คนอ่านตามรอยกลับไปที่แหล่งได้ทุกข้อ</strong></p>
+<pre><code class="language-prompt">ช่วยเรียบเรียงข้อมูลที่รวบรวมมาเป็นรายงานสำหรับเสนอผู้บริหาร โครงสร้างดังนี้:
+
+1. คำถามที่ต้องการตอบ — เรียงเป็นข้อ
+2. ตารางแหล่งข้อมูล — ชื่อ / ผู้จัดทำ / ปี / ประเภทแหล่ง / ลิงก์
+3. สิ่งที่พบ — แยกตามคำถาม ทุกประโยคที่เป็นข้อเท็จจริงต้องมีลิงก์กำกับท้ายประโยค
+4. ข้อสรุป — ตอบคำถามแต่ละข้อตรง ๆ เขียนให้คนที่ไม่ได้อ่านส่วนบนเข้าใจได้
+5. สิ่งที่ยังไม่รู้ — ข้อมูลส่วนไหนที่หาไม่เจอ ขัดแย้งกัน หรือยังต้องค้นเพิ่ม
+
+กฎ:
+- ข้อไหนที่หาแหล่งอ้างอิงยืนยันไม่ได้ ให้ใส่เครื่องหมาย ⚠️ กำกับไว้ ห้ามตัดทิ้งเงียบ ๆ และห้ามเขียนปนกับข้อที่ยืนยันแล้ว
+- ห้ามเพิ่มข้อมูลที่ไม่ได้อยู่ในแหล่งที่รวบรวมมา
+</code></pre>
+<h3 id="2_1">ทำไม 2 ส่วนสุดท้ายถึงสำคัญที่สุด<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>ส่วน</th>
+<th>ทำหน้าที่อะไร</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>⚠️ ข้อที่ยืนยันไม่ได้</strong></td>
+<td>แยกออกมาให้เห็น ดีกว่าตัดทิ้งหรือปล่อยปนไปกับข้อที่ยืนยันแล้ว — คนอ่านจะได้ตัดสินใจเองว่าจะเชื่อแค่ไหน</td>
+</tr>
+<tr>
+<td><strong>สิ่งที่ยังไม่รู้</strong></td>
+<td>รายงานที่บอกว่า "เรื่องนี้ยังไม่มีข้อมูล" น่าเชื่อถือกว่ารายงานที่ตอบทุกอย่างได้หมด — และช่วยให้ผู้บริหารรู้ว่าตัดสินใจบนข้อมูลเท่าไหร่</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">ประโยคที่ทำให้รายงานน่าเชื่อถือขึ้นทันที</p>
+<p><em>"ข้อมูลส่วนนี้ยังไม่พบแหล่งอ้างอิงที่ตรวจสอบได้ จึงยังไม่ควรใช้ประกอบการตัดสินใจ"</em></p>
+<p>การยอมรับขอบเขตของสิ่งที่รู้ ไม่ได้ทำให้งานดูอ่อน — มันบอกผู้อ่านว่าเราแยกออกระหว่างสิ่งที่รู้กับสิ่งที่เดา</p>
+</div>
+<hr />
+<h2 id="deep-research">ถ้าใช้ Deep Research: แก้แผนก่อนปล่อยให้รัน<a class="headerlink" href="#deep-research" title="Permanent link">&para;</a></h2>
+<p>Deep Research จะเสนอ <strong>research plan</strong> ก่อนเริ่มค้น — <strong>อ่านและแก้ตรงนี้</strong> เพราะถ้าปล่อยให้รันผิดทิศ ต้องรอใหม่อีก 5–30 นาที และเสียโควตาไปหนึ่งครั้ง</p>
+<p>สิ่งที่ควรดูในแผน: ครอบคลุมคำถามทุกข้อจากแบบฝึกหัดที่ 1 ไหม · จะไปค้นจากแหล่งประเภทไหน · มีมุมไหนที่มันเพิ่มมาเองโดยเราไม่ได้ขอ</p>
+<p><strong>Gemini Deep Research มีข้อได้เปรียบหนึ่งอย่าง</strong> — เชื่อมกับ Google Workspace ได้ ค้นจาก Gmail, Drive และ Chat ของเราประกอบกับข้อมูลจากเว็บได้ในครั้งเดียว และ export เข้า Google Docs ได้ทันที</p>
+<!-- TODO: ใส่ภาพหน้า research plan ที่ Deep Research เสนอก่อนเริ่มค้น -->
+
+<hr />
+<h2 id="_5">สรุป<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ขั้น</th>
+<th>สิ่งที่ทำ</th>
+<th>หลักการ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>แตกโจทย์เป็นคำถามที่ตอบได้ด้วยข้อมูล</td>
+<td>คำถามคือสิ่งที่บอกว่า "ค้นเสร็จแล้ว"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ค้นหลายมุม → จัดชั้นแหล่ง → คลิกเปิดตรวจ</td>
+<td>ไม่ใช่ทุกแหล่งมีน้ำหนักเท่ากัน</td>
+</tr>
+<tr>
+<td>3</td>
+<td>เขียนรายงานที่มีลิงก์กำกับทุกข้อ + ⚠️ + ช่องว่าง</td>
+<td>ตามรอยกลับไปที่แหล่งได้ทุกข้อ</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">หลักการใช้ให้ถูกต้อง</p>
+<ol>
+<li><strong>ใช้เครื่องมือที่ citation ติดมาในตัว</strong> — ไม่ใช่ขอ chatbot ธรรมดาให้อ้างอิงเอง</li>
+<li><strong>ระบุกรอบเวลาและขอบเขตพื้นที่</strong> — "ในประเทศไทย ปี 2025–2026" ได้ผลตรงกว่าคำถามลอย ๆ</li>
+<li><strong>บอกว่าจะเอาไปใช้ทำอะไร</strong> — ทำให้ AI เลือกมุมที่ใช้ได้จริง</li>
+<li><strong>สั่งให้แยกข้อเท็จจริงออกจากการคาดการณ์</strong> — สองอย่างนี้ปนกันได้ง่ายมากในรายงานที่ AI เขียน</li>
+<li><strong>สั่งให้บอกความไม่แน่นอน</strong> — "ถ้าหาไม่เจอให้บอกตรง ๆ" ป้องกันการเติมช่องว่าง</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">สิ่งที่ไม่ควรทำ</p>
+<ul>
+<li><strong>ใช้ตัวเลขหรือ citation โดยไม่คลิกเปิดดู</strong> — โดยเฉพาะสิ่งที่จะขึ้นสไลด์หรือเข้ารายงาน</li>
+<li><strong>อ้างข่าวแทนตัวงานวิจัย</strong> — ถ้าจะอ้างตัวเลข ให้ตามไปถึงต้นทาง</li>
+<li><strong>ใช้ AI ตรวจ AI</strong> — เอาคำตอบจาก AI ตัวหนึ่งไปถามอีกตัวว่า "จริงไหม" ไม่ใช่การตรวจสอบ ต้องกลับไปที่เอกสารต้นทาง</li>
+<li><strong>ตัดข้อที่ยืนยันไม่ได้ทิ้งเงียบ ๆ</strong> — ทำให้รายงานดูแน่นกว่าความจริง ใส่ ⚠️ ไว้ดีกว่า</li>
+<li><strong>ส่งรายงานที่ไม่มีส่วน "สิ่งที่ยังไม่รู้"</strong> — ไม่มีงานค้นคว้าไหนที่ตอบได้ทุกอย่าง</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1228 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warasinee-cha.github.io/aiworker-prompt-lib/decisions/">
+      
+      
+        <link rel="prev" href="../long-documents/">
+      
+      
+        <link rel="next" href="../research/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>6. คิดและตัดสินใจ - AI Worker - Prompt Lib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-header__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Worker - Prompt Lib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. คิดและตัดสินใจ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-nav__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Worker - Prompt Lib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เริ่มต้น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    เริ่มต้น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เครื่องมือ AI ที่ควรรู้จัก
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talk-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    พูดกับ AI แทนการพิมพ์
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drafting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ร่างข้อความสื่อสาร
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. จัดการบันทึกการประชุม
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. ทำสไลด์นำเสนอ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. วิเคราะห์ข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ร่างเอกสารยาว
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. คิดและตัดสินใจ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. คิดและตัดสินใจ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สถานการณ์ที่เราจะใช้ฝึก
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: สอนกรอบคิดให้ AI ก่อน แล้วระบายปัญหา
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: หาสาเหตุจริง ไม่ใช่แก้ที่อาการ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 3: ขอทางเลือกและให้ AI หาจุดอ่อนของแผน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. ค้นคว้าหาข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. สร้างชิ้นงาน
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ตัวอย่างผลงาน
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ตัวอย่างผลงาน
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations-showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    สไลด์ที่สร้างด้วย AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สถานการณ์ที่เราจะใช้ฝึก
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: สอนกรอบคิดให้ AI ก่อน แล้วระบายปัญหา
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: หาสาเหตุจริง ไม่ใช่แก้ที่อาการ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 3: ขอทางเลือกและให้ AI หาจุดอ่อนของแผน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">คิดและตัดสินใจด้วย AI<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p>หน้าอื่น ๆ ในเว็บนี้ใช้ AI <strong>ทำงานให้</strong> — ร่างข้อความ สรุปประชุม ทำสไลด์ วิเคราะห์ข้อมูล อ่านเอกสาร</p>
+<p>หน้านี้ต่างออกไป: เราใช้ AI <strong>เป็นคู่คิด</strong> ไม่ใช่คนทำงาน และคำตอบสุดท้ายยังเป็นของเราเสมอ</p>
+<div class="admonition danger">
+<p class="admonition-title">สิ่งที่คนมักทำผิด</p>
+<p>ถาม AI ว่า <strong>"ควรทำอะไรดี"</strong> แล้วทำตาม — นั่นคือการโอนการตัดสินใจให้เครื่องมือ ซึ่งรับผิดชอบแทนเราไม่ได้ และไม่รู้ข้อจำกัดด้านงบ นโยบาย หรือการเมืองภายในที่เราไม่ได้บอก</p>
+</div>
+<p><strong>เครื่องมือที่ใช้:</strong> <a href="https://gemini.google.com">Gemini</a> หรือ <a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a> — งานนี้ต้องการแค่บทสนทนาที่ลึกและถามกลับได้ ไม่ต้องการเครื่องมือพิเศษ</p>
+<p><strong>ไฟล์ที่ต้องเตรียม:</strong> 📄 <a href="https://drive.google.com/file/d/1X0y-CV5oziQpwGGKjiM7h8E9VgXfkhEG/view?usp=sharing">7S-guide.pdf</a> — คู่มืออธิบายว่าแต่ละมิติของ 7S คืออะไร ดาวน์โหลดไว้ก่อน</p>
+<hr />
+<h2 id="_1">สถานการณ์ที่เราจะใช้ฝึก<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>คณะกำลังจะเปิดหลักสูตร Non-Degree ด้าน AI สำหรับคนวัยทำงาน</strong> — ผู้บริหารเห็นชอบทิศทางนี้แล้ว แต่พอจะเริ่มลงมือจริง กลับติดขัดไปหมด</p>
+<p>คุณเป็น HR ของคณะนี้ และได้ยินปัญหามาหลากหลาย สิ่งที่ได้ยินจากคนในคณะ:</p>
+<blockquote>
+<p><em>"หลักสูตรยังออกแบบไม่เสร็จเลย ยังไม่รู้ว่าจะเริ่มยังไง · โครงสร้างเวลาเรียนออกแบบไว้สำหรับ ป.ตรี/ป.โท ตารางสอนก็ไม่เอื้ออำนวยให้สอนคนทำงาน · ระบบทะเบียนรองรับแค่นักศึกษาปกติ คนนอกที่อยากมาเรียนลงทะเบียนไม่ได้ · อาจารย์เก่งวิชาการมาก แต่ไม่เคยสอนคนทำงาน · ภาระสอนหลักสูตรปกติก็เต็มอยู่แล้ว · อาจารย์บางส่วนมองว่า Non-Degree ไม่ใช่งานของตัวเอง หัวหน้าภาคก็ยังไม่รู้จะคิดโหลดงานให้ยังไง"</em></p>
+</blockquote>
+<p><strong>คุณต้องเสนอผู้บริหารว่าจะแก้อะไรก่อน</strong> — และปัญหาที่ได้ยินมาทั้งหมดนี้ ปนกันจนแยกไม่ออกว่าอะไรคือสาเหตุ อะไรคือผลที่ตามมา</p>
+<p><strong>สิ่งที่ต้องส่ง:</strong> บทวิเคราะห์หน้าเดียวที่ผู้บริหารอ่านแล้วเห็นภาพว่าอุปสรรคจริงอยู่ตรงไหน และควรลงมือแก้อะไรก่อน</p>
+<h3 id="_2">เริ่มจากกรอบคิด ที่เหมาะสม<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>เวลาเราสอน HR ให้แก้ปัญหาเชิงกลยุทธ์ เราสอนกรอบแนวคิดก่อน แล้วค่อยสอนวิเคราะห์</p>
+<p>สำหรับ AI การให้กรอบคิด ช่วยให้ AI แยกแยะประเด็นได้ดีขึ้น</p>
+<p>สำหรับตัวอย่างนี้ เราให้น้อง AI ผู้ช่วย HR ของเราใช้กรอบคิด <strong>McKinsey 7S</strong> คือกรอบวิเคราะห์สุขภาพองค์กรผ่าน 7 มิติที่เชื่อมโยงกัน — จุดประสงค์คือหาว่า <strong>มิติไหนอ่อน หรือมิติไหนไม่สอดคล้องกัน</strong> ไม่ใช่ให้คะแนนว่าดีหรือไม่ดี</p>
+<table>
+<thead>
+<tr>
+<th>มิติ</th>
+<th>คำถามหลักที่ต้องตอบ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strategy</strong> — กลยุทธ์</td>
+<td>หน่วยงานมีทิศทางชัดไหม คนรู้ไหมว่าจะไปไหน</td>
+</tr>
+<tr>
+<td><strong>Structure</strong> — โครงสร้าง</td>
+<td>ใครรับผิดชอบอะไร โครงสร้างรองรับงานจริงหรือมีแค่บนกระดาษ</td>
+</tr>
+<tr>
+<td><strong>System</strong> — ระบบ</td>
+<td>ระบบ IT ข้อมูล และกระบวนการทำงาน ช่วยหรือเป็นอุปสรรค</td>
+</tr>
+<tr>
+<td><strong>Staff</strong> — คน</td>
+<td>มีคนพอไหม คนที่มีใช่คนที่ต้องการไหม อัตราลาออกเป็นอย่างไร</td>
+</tr>
+<tr>
+<td><strong>Skill</strong> — ทักษะ</td>
+<td>คนมีทักษะที่งานต้องการไหม ช่องว่างอยู่ตรงไหน</td>
+</tr>
+<tr>
+<td><strong>Style</strong> — รูปแบบการบริหาร</td>
+<td>ผู้บริหารตัดสินใจแบบไหน วัฒนธรรมการทำงานเป็นอย่างไร</td>
+</tr>
+<tr>
+<td><strong>Shared Value</strong> — ค่านิยมร่วม</td>
+<td>องค์กรมีค่านิยมที่คนเชื่อจริง หรือมีแค่บนกระดาษ</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ทำไมต้องมีกรอบ ไม่เล่าปัญหาเปล่า ๆ:</strong> ถ้าเล่าลอย ๆ AI จะสรุปกลับมาเป็นก้อนเดียวตามที่เราเล่า — พอมีกรอบ มันจะแยกให้เห็นว่าปัญหากระจุกอยู่มิติไหน และ<strong>มิติไหนที่เรายังไม่ได้พูดถึงเลย</strong> ซึ่งมักเป็นจุดที่คำตอบซ่อนอยู่</p>
+<h2 id="1-ai">แบบฝึกหัดที่ 1: สอนกรอบคิดให้ AI ก่อน แล้วระบายปัญหา<a class="headerlink" href="#1-ai" title="Permanent link">&para;</a></h2>
+<h3 id="_3">ขั้นตอน<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>อัปโหลด <code>7S-guide.pdf</code> เข้า Gemini ก่อน</strong> — เพื่อให้ AI วิเคราะห์ตามกรอบที่เราเข้าใจตรงกัน ไม่ใช่กรอบที่มันไปหยิบมาจากที่ไหนก็ไม่รู้</li>
+<li><strong>เล่าปัญหาตรง ๆ เหมือนคุยกับเพื่อนร่วมงาน ไม่ต้องจัดระเบียบก่อน:</strong></li>
+</ol>
+<pre><code class="language-prompt">ขอระบายปัญหาในหน่วยงานให้ฟังก่อนนะ:
+
+[พิมพ์หรือพูดได้เลย เช่น &quot;คณะจะเปิดหลักสูตร Non-Degree ด้าน AI สำหรับคนทำงาน
+แต่หลักสูตรยังออกแบบไม่เสร็จ โครงสร้างคณะทำไว้สำหรับ ป.ตรี/ป.โท จะทำงานข้ามหน่วยงานก็ติดขัด
+ระบบทะเบียนรองรับแค่นักศึกษาปกติ คนนอกลงทะเบียนไม่ได้
+อาจารย์เก่งวิชาการแต่ไม่เคยสอนคนทำงาน ภาระสอนปกติก็เต็มแล้ว
+อาจารย์บางส่วนมองว่า Non-Degree ไม่ใช่งานของตัวเอง หัวหน้าภาคยังไม่รู้จะคิดโหลดงานยังไง&quot;]
+
+ไฟล์ที่แนบมาคือคู่มืออธิบายว่าแต่ละมิติของ 7S หมายถึงอะไร
+
+ช่วยจัดสิ่งที่ฉันเล่าลงในกรอบ 7S โดย:
+- แต่ละมิติเขียนเป็น bullet สั้น ๆ ไม่เกิน 2-3 ข้อ ไม่ต้องเป็นย่อหน้า
+- กำกับว่ามิติไหนเป็น Critical Gap และมิติไหนที่ยังพอไปได้
+- บอกด้วยว่ามิติไหนที่ฉันยังไม่ได้ให้ข้อมูลเลย
+- ยังไม่ต้องสรุป Key Finding ตอนนี้ รอข้อมูลครบก่อน
+</code></pre>
+<h3 id="_4">ผลลัพธ์ที่ได้<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="ac-gallery ac-gallery-large">
+  <img src="../images/7s-canvas.jpg" alt="7S Canvas ของคณะวิศวกรรม AI ที่ได้จากการวิเคราะห์" />
+</div>
+
+<p>📄 <a href="../7s-example.pdf">เปิดดูไฟล์เต็ม (7s-example.pdf)</a></p>
+<p>จากเรื่องที่เล่าแบบกระจัดกระจาย AI จัดออกมาเป็นภาพเดียวที่ผู้บริหารกวาดตาอ่านจบได้ — <strong>สังเกต 3 อย่างที่ทำให้มันใช้งานได้จริง:</strong></p>
+<table>
+<thead>
+<tr>
+<th>สิ่งที่สังเกตได้</th>
+<th>ทำไมสำคัญ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>แต่ละมิติมีแค่ 2–3 bullet สั้น ๆ</strong></td>
+<td>ไม่ใช่เรียงความ — เพราะเราสั่งความยาวไว้ในพรอมต์ ถ้าไม่สั่งจะได้ย่อหน้ายาวที่เอาไปใช้ต่อไม่ได้</td>
+</tr>
+<tr>
+<td><strong>Skill และ Shared Value ถูกกำกับว่า Critical Gap</strong></td>
+<td>ไม่ได้ให้น้ำหนักทุกมิติเท่ากัน แต่ชี้ชัดว่าจุดไหนคือปัญหาจริง</td>
+</tr>
+<tr>
+<td><strong>Strategy ไม่ได้ถูกกำกับว่าเป็นปัญหา</strong></td>
+<td>ทิศทางชัดอยู่แล้ว — สิ่งที่ขาดคือความพร้อมของคน ซึ่งเป็นคนละเรื่องกับการไม่มีแผน</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">จุดที่การวิเคราะห์แบบมีกรอบให้ผลต่างจากการฟังคำบ่น</p>
+<p>ถ้าฟังแค่อาการ เราจะได้ข้อสรุปว่า <em>"ทุกอย่างยังไม่พร้อม"</em> แล้วแก้ทุกเรื่องพร้อมกัน</p>
+<p>แต่พอจัดลงกรอบแล้วเห็นว่า <strong>ปัญหากระจุกอยู่ที่มิติเรื่องคน (Skill + Shared Value)</strong> ส่วนมิติอื่นเป็นผลที่ตามมา — การแก้จึงเริ่มจากคนละจุด และประหยัดกว่ามาก</p>
+</div>
+<h3 id="ai_1">ยิ่งใส่ข้อมูลมาก AI ยิ่งวิเคราะห์แม่น<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<p>ผลรอบแรกจะมีมิติที่ AI บอกว่า "ยังไม่มีข้อมูล" — เติมลงไปในบทสนทนาเดิม ลองนึกถึงคำถามเหล่านี้:</p>
+<table>
+<thead>
+<tr>
+<th>มิติ</th>
+<th>คำถามที่ช่วยให้นึกออกว่าควรบอกอะไรเพิ่ม</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Staff — คน</strong></td>
+<td>หน่วยงานมีกี่คน? ใครพอจะรับงานใหม่ได้บ้าง? ภาระงานปัจจุบันเต็มแค่ไหน?</td>
+</tr>
+<tr>
+<td><strong>Skill — ทักษะ</strong></td>
+<td>คนที่มีอยู่ทำอะไรได้แล้วบ้าง? ทักษะที่ขาดคืออะไรแน่ ๆ? เคยมีใครทำเรื่องนี้มาก่อนไหม?</td>
+</tr>
+<tr>
+<td><strong>System — ระบบ</strong></td>
+<td>ระบบที่มีรองรับอะไรได้บ้าง? ถ้าจะปรับต้องคุยกับใคร ใช้เวลานานแค่ไหน?</td>
+</tr>
+<tr>
+<td><strong>Structure — โครงสร้าง</strong></td>
+<td>ใครจะเป็นเจ้าภาพเรื่องนี้? ตอนนี้มีใครรับผิดชอบอยู่หรือยัง?</td>
+</tr>
+<tr>
+<td><strong>Strategy — กลยุทธ์</strong></td>
+<td>ผู้บริหารตั้งเป้าไว้แค่ไหน? มีกำหนดเวลาไหม? งบมาจากไหน?</td>
+</tr>
+<tr>
+<td><strong>Style — การบริหาร</strong></td>
+<td>เรื่องแบบนี้ปกติตัดสินใจกันอย่างไร ใช้เวลานานไหม?</td>
+</tr>
+<tr>
+<td><strong>Shared Value — ค่านิยม</strong></td>
+<td>คนในหน่วยงานพูดถึงเรื่องนี้กันว่าอย่างไร? มีใครสนับสนุนเต็มที่บ้าง?</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-prompt">ขอเพิ่มข้อมูลอีกหน่อย:
+
+[ใส่รายละเอียดและตัวเลขถ้ามี เช่น &quot;คณะมีอาจารย์ 24 คน มีคนที่เคยสอนคนทำงานจริง 2 คน
+ผู้บริหารตั้งเป้าเปิดรุ่นแรกภาคเรียนหน้า งบยังไม่ได้จัดสรรแยก
+ยังไม่มีใครถูกแต่งตั้งเป็นเจ้าภาพอย่างเป็นทางการ&quot;]
+
+ช่วยปรับ 7S Canvas ให้ละเอียดขึ้นตามข้อมูลใหม่นี้
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">สังเกตว่าเรายังไม่ได้ถาม 'ควรทำอะไรดี' เลย</p>
+<p>ขั้นนี้เราให้ AI <strong>จัดระเบียบสิ่งที่เรารู้</strong> ก่อน เพราะการเห็นปัญหาครบถ้วนคือเงื่อนไขของการตัดสินใจที่ดี</p>
+</div>
+<hr />
+<h2 id="2">แบบฝึกหัดที่ 2: หาสาเหตุจริง ไม่ใช่แก้ที่อาการ<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><strong>ปัญหาที่พบบ่อยที่สุดในการตัดสินใจ: เห็นอาการแล้วแก้ที่อาการ</strong></p>
+<table>
+<thead>
+<tr>
+<th>เห็นอาการ</th>
+<th>มักแก้ด้วย</th>
+<th>แต่ถ้าสาเหตุจริงคือ...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>คนไม่ค่อย engage งานไม่มีคนอาสาทำ</td>
+<td>รับคนเพิ่ม</td>
+<td>"คนใหม่ไม่มีใครดูแลให้เข้ากับวัฒนธรรม" → รับเพิ่มก็วนซ้ำ</td>
+</tr>
+<tr>
+<td>ผลงานไม่ดี</td>
+<td>จัดอบรม</td>
+<td>"ไม่มีเป้าหมายที่ชัดตั้งแต่ต้น" → อบรมเท่าไหร่ก็ไม่ช่วย</td>
+</tr>
+<tr>
+<td>ข้อมูลไม่ครบ</td>
+<td>จ้างทำระบบใหม่</td>
+<td>"ไม่มีคนรับผิดชอบกรอก" → ระบบใหม่ก็ว่างเปล่าเหมือนเดิม</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1">ขั้นที่ 1 — ให้วิเคราะห์ผลกระทบจริง ไม่ใช่แค่บอกว่า "ไม่ดี"<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-prompt">จากสิ่งที่คุยกันมา ช่วยวิเคราะห์ gap ในแต่ละมิติ โดย:
+- ระบุว่า gap แต่ละอันส่งผลอย่างไรในทางปฏิบัติ ไม่ใช่แค่บอกว่าไม่ดี
+  แต่บอกว่าทำให้เกิดอะไร หรือทำอะไรไม่ได้
+- ถ้า gap ไหนเชื่อมกัน หรือ gap หนึ่งเป็นสาเหตุของอีกอันหนึ่ง ให้บอกด้วย
+- จัดลำดับว่าควรแก้อะไรก่อน และเพราะอะไร
+
+จากนั้นเขียนกล่อง &quot;Gap สำคัญที่สุดที่พบ (Key Finding)&quot; ปิดท้าย
+โดยสรุปข้ามมิติว่าอุปสรรคใหญ่ที่สุดของหน่วยงานคืออะไร ไม่เกิน 3-4 บรรทัด
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Key Finding คือส่วนที่ผู้บริหารอ่านจริง</p>
+<p>ใน Canvas ข้างต้น Key Finding ชี้ว่าอุปสรรคที่ใหญ่ที่สุดคือ <strong>เรื่องคนและ mindset (Skill + Shared Value)</strong> ทั้งที่กลยุทธ์ชัดเจนอยู่แล้ว — ข้อสรุปแบบนี้เปลี่ยนทิศทางการแก้ปัญหาทั้งหมด จากการเร่งออกแบบหลักสูตร มาเป็นการเตรียมคนก่อน</p>
+<p>ถ้าไม่บังคับให้สรุปข้ามมิติ เราจะได้แค่รายการ gap 7 อันที่ดูสำคัญเท่ากันหมด ซึ่งเอาไปตัดสินใจต่อไม่ได้</p>
+</div>
+<h3 id="2-problem-statement-3">ขั้นที่ 2 — เขียน Problem Statement ที่ครบ 3 อย่าง<a class="headerlink" href="#2-problem-statement-3" title="Permanent link">&para;</a></h3>
+<p><strong>Problem Statement ที่ดีบอก 3 อย่าง:</strong> ใครได้รับผลกระทบ · ปัญหาคืออะไรและเกิดจากอะไร (สาเหตุ ไม่ใช่อาการ) · ถ้าไม่แก้จะเกิดอะไร</p>
+<pre><code class="language-prompt">สำหรับแต่ละ gap เขียน Problem Statement 1 ย่อหน้า โดยระบุ:
+- ใครได้รับผลกระทบ (ระบุให้ชัด ไม่ใช่แค่ &quot;องค์กร&quot;)
+- ปัญหาคืออะไร และเกิดจากสาเหตุอะไร (สาเหตุ ไม่ใช่อาการ)
+- ถ้าไม่แก้ หน่วยงานจะเจอผลกระทบอะไร
+
+อ้างอิงเฉพาะสิ่งที่ฉันบอกมา ถ้าส่วนไหนข้อมูลยังไม่พอ ให้บอกตรง ๆ ว่าต้องการรู้อะไรเพิ่ม
+</code></pre>
+<div class="admonition danger">
+<p class="admonition-title">อ่านแล้วเถียงกลับ</p>
+<p>ข้อไหนที่ AI ให้น้ำหนักผิด หรือมองข้ามไป <strong>บอกให้แก้ได้เลย</strong></p>
+<p>ถ้าอ่านแล้วเห็นด้วยทุกข้อโดยไม่ต้องแก้อะไร ให้สงสัยไว้ก่อนว่าเราให้ข้อมูลไม่พอ จน AI แค่สะท้อนสิ่งที่เราพูดกลับมา</p>
+</div>
+<hr />
+<h2 id="3-ai">แบบฝึกหัดที่ 3: ขอทางเลือกและให้ AI หาจุดอ่อนของแผน<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h2>
+<pre><code class="language-prompt">จาก Problem Statement ที่สรุปกันไว้ ช่วยเสนอทางเลือกในการแก้ 3 ทาง โดยแต่ละทางระบุ:
+- ต้องใช้ทรัพยากรอะไรบ้าง (คน เวลา งบ)
+- จะเห็นผลเมื่อไหร่
+- ข้อเสียหรือความเสี่ยงของทางนี้คืออะไร
+- ถ้าทำแล้วไม่ได้ผล จะรู้ได้อย่างไรและเมื่อไหร่
+
+จัดอันดับให้ด้วยว่าทางไหนน่าเริ่มก่อน และเพราะอะไร
+</code></pre>
+<p>จากนั้นให้ AI ทำหน้าที่ค้าน:</p>
+<pre><code class="language-prompt">สมมติว่าคุณเป็นผู้บริหารที่ไม่เห็นด้วยกับแผนนี้
+ช่วยหาจุดอ่อนของแผนที่เลือกไว้ให้มากที่สุด — ทั้งเรื่องความเป็นไปได้
+ผลข้างเคียงที่อาจเกิด และสมมติฐานที่อาจไม่จริง
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">เทคนิคนี้เรียกว่า devil's advocate prompting</p>
+<p>การให้ AI ค้านแผนของเราเอง เป็นวิธีหาจุดอ่อนที่เราไม่ทันคิดก่อนที่จะไปเจอในห้องประชุมจริง</p>
+</div>
+<hr />
+<h2 id="_5">สรุป<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">หลักการใช้ให้ถูกต้อง</p>
+<ol>
+<li><strong>สอนกรอบคิดให้ AI ก่อนใช้งาน</strong> — อัปโหลดคู่มือกรอบที่องค์กรเราใช้จริง ป้องกันไม่ให้ AI ไปหยิบนิยามจากที่อื่นที่ไม่ตรงกับที่เราเข้าใจ</li>
+<li><strong>สั่งรูปแบบผลลัพธ์ไปด้วย</strong> — "แต่ละมิติไม่เกิน 2-3 bullet" และ "กำกับว่ามิติไหนเป็น Critical Gap" คือสิ่งที่ทำให้ได้ Canvas หน้าเดียวแทนเรียงความ</li>
+<li><strong>เล่าดิบ ๆ ได้เลย ไม่ต้องเรียบเรียงก่อน</strong> — การจัดระเบียบคืองานของ AI หน้าที่เราคือเล่าให้ครบ</li>
+<li><strong>อย่าถาม "ควรทำอะไรดี" — ถาม "มีทางเลือกอะไรบ้าง แต่ละทางแลกกับอะไร"</strong></li>
+<li><strong>สั่งให้บอกว่าข้อมูลตรงไหนยังไม่พอ</strong> — ป้องกันการวิเคราะห์บนสมมติฐานที่ AI แต่งขึ้นเอง</li>
+<li><strong>บังคับให้แยกสาเหตุออกจากอาการ</strong> — โดยธรรมชาติ AI จะสรุปสิ่งที่เราเล่า (ซึ่งมักเป็นอาการ) กลับมาให้</li>
+<li><strong>ให้ข้อมูลเป็นตัวเลขเมื่อมี</strong> — "มีอาจารย์ที่เคยสอนคนทำงานจริง 2 คนจาก 24 คน" ให้การวิเคราะห์คนละระดับกับ "อาจารย์ยังไม่พร้อม"</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">สิ่งที่ไม่ควรทำ</p>
+<ul>
+<li><strong>มองแผนที่ AI ร่างเป็นแผนที่ผ่านการอนุมัติแล้ว</strong> — มันไม่รู้ข้อจำกัดที่เราไม่ได้บอก</li>
+<li><strong>ยึดคำตอบแรก</strong> — คำตอบรอบแรกคือจุดเริ่มบทสนทนา ไม่ใช่ข้อสรุป</li>
+<li><strong>ปล่อยให้ AI เติมข้อเท็จจริงที่เราไม่เคยบอก</strong> — โดยเฉพาะตัวเลขและชื่อคน อ่านแล้วถามตัวเองว่า "อันนี้ฉันบอกไปหรือเปล่า"</li>
+<li><strong>โอนการตัดสินใจให้เครื่องมือ</strong> — AI จัดโครงสร้างตัวเลือกให้ได้ แต่รับผิดชอบผลลัพธ์แทนไม่ได้</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

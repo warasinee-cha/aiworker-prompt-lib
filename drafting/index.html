@@ -1,0 +1,1097 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warasinee-cha.github.io/aiworker-prompt-lib/drafting/">
+      
+      
+        <link rel="prev" href="../talk-to-ai/">
+      
+      
+        <link rel="next" href="../meetings/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. ร่างข้อความสื่อสาร - AI Worker - Prompt Lib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-header__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Worker - Prompt Lib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. ร่างข้อความสื่อสาร
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-nav__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Worker - Prompt Lib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เริ่มต้น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    เริ่มต้น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เครื่องมือ AI ที่ควรรู้จัก
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talk-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    พูดกับ AI แทนการพิมพ์
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ร่างข้อความสื่อสาร
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ร่างข้อความสื่อสาร
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ก่อนเริ่ม: ลองแบบที่คนส่วนใหญ่ทำก่อน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: เตรียมบริบทและวัตถุดิบ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: สั่งดึงข้อเท็จจริงพร้อมเกณฑ์ แล้วตรวจก่อนเขียน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 3: ระบุรูปแบบผลลัพธ์
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. จัดการบันทึกการประชุม
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. ทำสไลด์นำเสนอ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. วิเคราะห์ข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ร่างเอกสารยาว
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. คิดและตัดสินใจ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. ค้นคว้าหาข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. สร้างชิ้นงาน
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ตัวอย่างผลงาน
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ตัวอย่างผลงาน
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations-showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    สไลด์ที่สร้างด้วย AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ก่อนเริ่ม: ลองแบบที่คนส่วนใหญ่ทำก่อน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: เตรียมบริบทและวัตถุดิบ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: สั่งดึงข้อเท็จจริงพร้อมเกณฑ์ แล้วตรวจก่อนเขียน
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 3: ระบุรูปแบบผลลัพธ์
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">ร่างข้อความสื่อสารด้วย AI<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p>ในแบบฝึกหัดนี้เราจะสวมบทบาทเป็นเจ้าหน้าที่ที่ได้รับมอบหมายให้เขียนโพสต์เฟซบุ๊กเกี่ยวกับผลกระทบของมลพิษ PM2.5 ต่อสุขภาพคนไทย โดยต้องมีข้อมูลจากงานวิจัยคุณภาพสูงสนับสนุน</p>
+<p>เราจะทำ 3 ขั้น: <strong>เตรียมบริบทและวัตถุดิบ → สั่งงานพร้อมเกณฑ์แล้วตรวจ → ระบุรูปแบบผลลัพธ์</strong></p>
+<hr />
+<h2 id="_1">ก่อนเริ่ม: ลองแบบที่คนส่วนใหญ่ทำก่อน<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>หลายคนเริ่มใช้ AI ด้วยการเขียน prompt สั้น ๆ แล้วคาดหวังผลลัพธ์ที่ดี แต่กลับผิดหวัง จนเข้าใจผิดว่า AI ยังไม่ค่อยฉลาดหรือไม่มีประโยชน์</p>
+<pre><code>โปรดเขียนโพสต์สั้นๆสำหรับเฟสบุ๊กเกี่ยวกับผลกระทบของมลพิษ PM2.5 ต่อสุขภาพของประชาชนในประเทศไทย โดยใช้ข้อมูลจากงานวิจัยที่น่าเชื่อถือเป็นพื้นฐาน
+</code></pre>
+<p><img alt="ตัวอย่างผลลัพธ์จาก Copilot" src="../images/pe-writing-task-01.png" /></p>
+<p><img alt="ตัวอย่างผลลัพธ์จาก ChatGPT" src="../images/pe-writing-task-02.png" /></p>
+<p>prompt สั้น ๆ ง่าย ๆ มักให้ผลลัพธ์ที่ไม่ค่อยดี เพราะ AI ไม่เข้าใจว่าเราต้องการอะไร และ<strong>ไม่มีแหล่งข้อมูลให้อ้างอิง</strong> จึงมีอาการ hallucinate — เราสั่งให้มัน "ใช้งานวิจัย" แต่ไม่ได้ให้งานวิจัยไป</p>
+<p>ลองดูวิธีที่ถูกต้องกัน</p>
+<hr />
+<h2 id="1">แบบฝึกหัดที่ 1: เตรียมบริบทและวัตถุดิบ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>ถ้าเราจะทำงานนี้เองและอยากได้ผลลัพธ์คุณภาพสูง เราคงต้องหาข้อมูลที่น่าเชื่อถือก่อน — ให้ AI ทำขั้นนี้ก่อนเช่นกัน <strong>ยังไม่ให้เขียน</strong></p>
+<blockquote>
+<p><strong>Try this prompt</strong></p>
+</blockquote>
+<pre><code>ฉันต้องการเขียนเฟสบุคโพสท์คุณภาพสูงที่มีงานวิจัยรองรับเกี่ยวกับ ปัญหามลพิษ PM2.5 ในประเทศไทย โพสท์นี้เป็นโพสท์สั้นๆที่อธิบายถึงผลกระทบของ PM2.5 ต่อสุขภาพของประชาชน ช่วยหาลิงค์ข้อมูลที่ละเอียดเกี่ยวกับปัญหามลพิษ PM2.5 ในประเทศไทย โปรดให้ข้อมูลจากแหล่งที่มาที่น่าเชื่อถือ เช่น รายงานจากองค์กรของรัฐบาล บทความวิชาการ หรือข้อมูลจากองค์กรระหว่างประเทศ ข้อมูลควรครอบคลุมผลกระทบต่อสุขภาพของประชาชนจากการสัมผัสมลพิษ PM2.5 ทั้งในระยะสั้นและระยะยาว โปรดเน้นลิงค์ที่มีงานวิจัยที่น่าเชื่อถือระดับนานาชาติ
+</code></pre>
+<p><img alt="ผลลัพธ์จาก Copilot" src="../images/pe-writing-task-03.png" /></p>
+<p>งานวิจัยที่ AI หามาได้ค่อนข้างน่าเชื่อถือ — ลิงก์แรกเป็นบทความจากสถาบันวิจัยจุฬาภรณ์ ลิงก์ที่สองเป็นบทความจากอาจารย์คณะเภสัชศาสตร์ มหาวิทยาลัยสยาม</p>
+<div class="admonition warning">
+<p class="admonition-title">อย่ารับลิงก์ที่ AI ให้โดยไม่คลิก</p>
+<p>เปิดอ่านทั้งสองแล้วเลือกเอง — ในเดโมนี้บทความที่ 2 ข้อมูลแน่นและน่าเชื่อถือกว่า จึงดาวน์โหลดมาใช้อ้างอิง</p>
+</div>
+<p>📄 <a href="../pm25-health-effects.pdf">PM2.5 ผลกระทบและกลไกการเกิดพิษ.pdf</a> — ตัดหน้าที่ไม่จำเป็นออกแล้วเพื่อให้ใช้กับแผนฟรีได้</p>
+<hr />
+<h2 id="2">แบบฝึกหัดที่ 2: สั่งดึงข้อเท็จจริงพร้อมเกณฑ์ แล้วตรวจก่อนเขียน<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>เราอยากได้ข้อเท็จจริงจากบทความมาเขียนโพสต์ แต่ขี้เกียจอ่านเอง — จึงให้ AI สรุปเฉพาะข้อเท็จจริงมาให้เราตรวจก่อน <strong>ยังไม่ให้เขียนโพสต์</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">เลือกเครื่องมือให้ตรงกับงาน</p>
+<p>คนที่ใช้ AI หลายตัวจะรู้ว่าแต่ละตัวเก่งคนละอย่าง — งานดึงข้อมูลจาก PDF Claude ทำได้ดีเป็นพิเศษ เราจึงให้ Claude ทำขั้นนี้</p>
+</div>
+<blockquote>
+<p><strong>Try this prompt</strong></p>
+</blockquote>
+<pre><code>ช่วยดึงเอาข้อเท็จจริงมาจากบทความนี้หน่อย อยากได้ข้อเท็จจริงที่เน้นย้ำว่า PM2.5 อันตรายต่อสุขภาพแค่ไหน และอาจจะทำเกิดอาการหรือโรคภัยอะไรกับคนเราได้บ้าง ลิสต์ข้อเท็จจริงทั้งหมดมาและช่วย quote ข้อความในบทความหน่อยว่าแต่ละข้อเท็จจริงมาจากส่วนไหนของบทความนี้ โปรดเขียนให้เข้าใจง่ายๆ คนทั่วไปก็เข้าใจได้ ถ้าใช้คำศัพท์ทางการแพทย์ก็ช่วยวงเล็บอธิบายหน่อยว่าหมายถึงอะไร
+</code></pre>
+<p><strong>สังเกตเกณฑ์ 3 ข้อที่ใส่ไว้ในคำสั่ง:</strong> ลิสต์ให้ครบทุกข้อ · quote ที่มาของแต่ละข้อ · เขียนให้คนทั่วไปเข้าใจ — เกณฑ์เหล่านี้คือสิ่งที่ทำให้ตรวจสอบงานได้</p>
+<details class="note">
+<summary>ผลลัพธ์ที่ได้จาก Claude — ข้อเท็จจริง 11 ข้อพร้อม quote</summary>
+<ol>
+<li>
+<p><strong>สมรรถภาพปอดลดลง</strong> — "ผลการศึกษาพบว่า PM2.5 ในอากาศมีค่าเฉลี่ย 1.81 ถึง 39.84 ไมโครกรัมต่อลูกบาศก์เมตร (ค่ามัธยฐาน=10.7 ไมโครกรัมต่อลูกบาศก์เมตร) และมีผลลดปริมาตรอากาศที่จุอยู่ในปอด (forced vital capacity) และปริมาตรของอากาศที่เป่าออกอย่างเร็วและแรงในวินาทีที่ 1 (forced expiratory volume in one second)"</p>
+</li>
+<li>
+<p><strong>อาการหอบหืด</strong> — "พบว่า PM2.5 กระตุ้นอาการหายใจมีเสียงหวีด (wheezing)"</p>
+</li>
+<li>
+<p><strong>โรคปอดอุดกั้นเรื้อรัง</strong> — "พบว่ามีความชุกของโรคปอดอุดกั้นเรื้อรังในกลุ่มที่อาศัยในพื้นที่ที่มี PM2.5 สูงมากกว่ากลุ่มที่อาศัยในพื้นที่ที่มี PM2.5 ต่ำอย่างมีนัยสำคัญ"</p>
+</li>
+<li>
+<p><strong>ติดเชื้อทางเดินหายใจส่วนล่าง</strong> — "PM2.5 ที่ความหนาแน่นเกิน 100 ไมโครกรัมต่อลูกบาศก์เมตรมีผลเพิ่มอุบัติการณ์การติดเชื้อในทางเดินหายใจส่วนล่างในเด็กอายุ 0-11 ปี"</p>
+</li>
+<li>
+<p><strong>โรคหลอดเลือดหัวใจ</strong> — "ปริมาณของ PM2.5 ที่เพิ่มขึ้น 10 ไมโครกรัมต่อลูกบาศก์เมตรที่ระดับความหนาแน่นมากกว่า 25 ไมโครกรัมต่อลูกบาศก์เมตรจะเพิ่มการเกิดภาวะหัวใจขาดเลือดแบบเฉียบพลัน"</p>
+</li>
+<li>
+<p><strong>ความดันโลหิตสูง</strong> — "adjusted hazard ratio ของอุบัติการณ์ในการเกิดโรคความดันโลหิตสูงต่อปริมาณ PM2.5 ที่เพิ่มขึ้นทุกๆ 10 ไมโครกรัมต่อลูกบาศก์เมตรในอากาศมีค่าเท่ากับ 1.13"</p>
+</li>
+<li>
+<p><strong>หลอดเลือดแข็งตัว (atherosclerosis)</strong> — "PM2.5 ทำให้ brachial artery flow-mediated dilation หรือ FMD ซึ่งเป็นตัวบ่งชี้การทำงานของเยื่อบุผนังหลอดเลือด (endothelial function) ลดลง"</p>
+</li>
+<li>
+<p><strong>ลิ่มเลือดอุดตัน</strong> — "PM2.5 ที่มีความหนาแน่นเพิ่มขึ้น 10 ไมโครกรัมต่อลูกบาศก์เมตรเป็นเวลาเฉลี่ย 1 เดือนมีผลเพิ่มอุบัติการณ์ในการเกิดลิ่มเลือดอุดตันในปอด"</p>
+</li>
+<li>
+<p><strong>โรคทางสมองและระบบประสาทส่วนกลาง</strong> — โรคหลอดเลือดสมอง ภาวะสมองเสื่อม กลุ่มอาการออทิสติก และโรคพาร์กินสัน</p>
+</li>
+<li>
+<p><strong>เบาหวานชนิดที่ 2</strong> — "เพิ่มความเสี่ยง 1.25 เท่าเมื่อความหนาแน่นของ PM2.5 เพิ่มขึ้น 10 ไมโครกรัมต่อลูกบาศก์เมตร"</p>
+</li>
+<li>
+<p><strong>มะเร็งปอด</strong> — "การได้รับ PM2.5 ผ่านทางการหายใจเป็นระยะเวลานานมีความสัมพันธ์กับการเกิดมะเร็งปอดโดยตรง"</p>
+</li>
+</ol>
+</details>
+<div class="admonition danger">
+<p class="admonition-title">ตรวจก่อนไปต่อ</p>
+<p>เปิด PDF กด <code>Ctrl+F</code> / <code>Cmd+F</code> ค้นข้อความที่ AI ยกมา <strong>สุ่มเช็ค 2–3 ข้อ</strong> โดยเฉพาะตัวเลข — ถ้าตรงหมด ที่เหลือน่าเชื่อถือขึ้นมาก ถ้าตรวจแล้วถูกต้อง จึงนำไปใช้ในขั้นต่อไปได้</p>
+</div>
+<hr />
+<h2 id="3">แบบฝึกหัดที่ 3: ระบุรูปแบบผลลัพธ์<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>ตอนนี้เรามีข้อเท็จจริงที่ตรวจแล้ว เหลือแค่บอกว่าอยากได้งานหน้าตาแบบไหน</p>
+<blockquote>
+<p><strong>Try this prompt</strong></p>
+</blockquote>
+<pre><code>โปรดใช้ข้อมูลและข้อเท็จจริงต่อไปนี้ในการเขียนโพสต์สำหรับเฟสบุ๊กขนาดประมาณ 150 คำ โดยใช้หัวข้อประมาณว่า &quot;PM2.5 อันตรายกว่าที่คิด&quot; โพสท์นี้ควรเขียนด้วยภาษาที่คนทั่วไปเข้าใจง่าย พยายามใส่รายละเอียดเท่าที่จะใส่ได้ใน 150 คำ โดยมีโทนของความห่วงใยต่อสุขภาพของผู้อ่าน และแชร์ข้อมูลแบบปรารถนาดีว่าให้ระวังตัวกันด้วย และหาวิธีป้องกันอย่าให้ PM2.5 ทำร้ายเราและคนที่เรารัก อย่าลืมอ้างอิงและขอบคุณผู้วิจัยสั้นๆ ใช้ภาษาที่ฟังดูน่ารัก เป็นกันเอง อบอุ่นแต่น่าเชื่อถือ แทนตัวเองว่าผมและเรียกผู้อ่านว่าลูกค้า เชิญชวนให้อ่านงานวิจัยต่อในลิงค์ (ฉันจะแนบลิงค์ต่อท้ายโพสท์)
+
+---
+
+ต่อไปนี้เป็นข้อเท็จจริงที่สรุปมาจากบทความเรื่อง PM2.5 ผลกระทบต่อสุขภาพและกลไกการเกิดพิษ โดยดร.ภก.วงศกร สุเชาว์อินทร์ คณะเภสัชศาสตร์ มหาวิทยาลัยสยาม
+
+[วางข้อเท็จจริงทั้ง 11 ข้อจากขั้นที่ 2 ที่ตรวจแล้ว]
+</code></pre>
+<p><strong>ห้าอย่างที่ระบุไว้ในคำสั่งนี้:</strong> ความยาว (150 คำ) · ระดับภาษา (คนทั่วไปเข้าใจง่าย) · โทน (ห่วงใย อบอุ่นแต่น่าเชื่อถือ) · สรรพนาม (ผม / ลูกค้า) · สิ่งที่ต้องมี (อ้างอิงผู้วิจัย + เชิญชวนอ่านต่อ)</p>
+<p><img alt="ผลลัพธ์จาก Claude" src="../images/pe-writing-task-04.png" /></p>
+<details class="note">
+<summary>ผลลัพธ์จาก Copilot (compose mode)</summary>
+<p>สวัสดีครับลูกค้าที่น่ารักทุกท่าน! วันนี้ผมมีเรื่องสำคัญที่อยากจะแชร์ให้ทุกคนได้รู้กันครับ เรื่องของ PM2.5 ที่อาจจะอันตรายกว่าที่เราคิดกันอยู่นะครับ จากการศึกษาของดร.ภก.วงศกร สุเชาว์อินทร์ พบว่า PM2.5 สามารถทำให้ปอดของเราทำงานได้ไม่เต็มที่ ทำให้เกิดอาการหอบหืด และแม้แต่โรคปอดอุดกั้นเรื้อรังก็เกิดขึ้นได้ครับ นอกจากนี้ยังเพิ่มความเสี่ยงต่อการติดเชื้อในทางเดินหายใจ โรคหลอดเลือดหัวใจ และความดันโลหิตสูงอีกด้วยครับ ดังนั้น อย่าลืมดูแลตัวเองและคนที่เรารักให้ห่างไกลจาก PM2.5 นะครับ และถ้าอยากรู้เพิ่มเติม อย่าลืมติดตามอ่านงานวิจัยของดร.ภก.วงศกร ด้วยนะครับ ขอบคุณครับ! 😊🍃</p>
+<p><img alt="ผลลัพธ์จาก Copilot compose mode" src="../images/pe-writing-task-05.png" /></p>
+</details>
+<p><strong>อ่านออกเสียงหนึ่งรอบก่อนส่ง</strong> — ฟังแล้วเหมือนเราเขียนไหม มีตัวเลขไหนหลุดมาโดยไม่ได้อยู่ในรายการข้อเท็จจริงที่เราอนุมัติหรือเปล่า</p>
+<hr />
+<h2 id="_2">สรุป<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>โพสต์ที่ AI เขียนอาจไม่ได้ดีเลิศที่สุด แต่ถ้าต้องเสิร์ชหาบทความเอง อ่านเอง สรุปเอง เขียนเอง ก็เหนื่อยกว่ามาก — AI เป็นผู้ช่วยที่ทำดราฟท์ให้เราคร่าว ๆ ก่อน แล้วเราแต่งเติมใส่บุคลิกของแบรนด์ลงไปเพิ่ม</p>
+<p><strong>เทียบกับตอนต้นหน้า:</strong> เนื้อหาเดียวกัน หัวข้อเดียวกัน เครื่องมือเดียวกัน — ต่างกันแค่เราให้บริบท ให้ข้อมูลจริง และบอกรูปแบบที่ต้องการ</p>
+<table>
+<thead>
+<tr>
+<th>ขั้น</th>
+<th>สิ่งที่ทำ</th>
+<th>เทคนิคหลัก</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ให้ AI หาแหล่งข้อมูล → เปิดอ่านเอง → เลือกและดาวน์โหลด</td>
+<td><strong>grounding</strong> — ให้ข้อมูลจริงไปด้วย อย่าให้ AI หาเอาเองในหัว</td>
+</tr>
+<tr>
+<td>2</td>
+<td>สั่งดึงข้อเท็จจริงพร้อม quote → สุ่มเช็คกับต้นฉบับ</td>
+<td>ใส่<strong>เกณฑ์ความสำเร็จ</strong>ลงในคำสั่ง</td>
+</tr>
+<tr>
+<td>3</td>
+<td>สั่งเขียนโดยระบุความยาว/ภาษา/โทน/สรรพนาม</td>
+<td>ระบุ<strong>รูปแบบผลลัพธ์</strong>ให้ครบ</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">ข้อมูลอ่อนไหว</p>
+<p>เนื้อหาที่ร่างอาจพาดพิงถึงคนหรือหน่วยงาน — อย่าวางข้อมูลลับของบุคคลที่สาม (เช่น อีเมลต้นฉบับจากลูกค้า หรือข้อมูลนักศึกษา) เข้าพรอมต์โดยไม่คิด</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

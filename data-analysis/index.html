@@ -1,0 +1,1082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warasinee-cha.github.io/aiworker-prompt-lib/data-analysis/">
+      
+      
+        <link rel="prev" href="../presentations/">
+      
+      
+        <link rel="next" href="../long-documents/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4. วิเคราะห์ข้อมูล - AI Worker - Prompt Lib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-header__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Worker - Prompt Lib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. วิเคราะห์ข้อมูล
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-nav__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Worker - Prompt Lib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เริ่มต้น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    เริ่มต้น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เครื่องมือ AI ที่ควรรู้จัก
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talk-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    พูดกับ AI แทนการพิมพ์
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drafting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ร่างข้อความสื่อสาร
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. จัดการบันทึกการประชุม
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. ทำสไลด์นำเสนอ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. วิเคราะห์ข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. วิเคราะห์ข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ก่อนเริ่ม: เตรียมไฟล์ให้ปลอดภัย
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: ให้ AI วางแผนวิเคราะห์ก่อน (ยังไม่ให้สรุป)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: ให้รันจริง แล้วตรวจการคำนวณก่อนเชื่อ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kpi-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ต่อยอด: วางแผน KPI และ Dashboard ก่อนมีข้อมูล
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ร่างเอกสารยาว
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. คิดและตัดสินใจ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. ค้นคว้าหาข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. สร้างชิ้นงาน
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ตัวอย่างผลงาน
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ตัวอย่างผลงาน
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations-showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    สไลด์ที่สร้างด้วย AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ก่อนเริ่ม: เตรียมไฟล์ให้ปลอดภัย
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 1: ให้ AI วางแผนวิเคราะห์ก่อน (ยังไม่ให้สรุป)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        แบบฝึกหัดที่ 2: ให้รันจริง แล้วตรวจการคำนวณก่อนเชื่อ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kpi-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ต่อยอด: วางแผน KPI และ Dashboard ก่อนมีข้อมูล
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สรุป
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">วิเคราะห์ข้อมูลด้วย AI<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p>อัปโหลดไฟล์ข้อมูล → พิมพ์ prompt → ได้ dashboard แบบ interactive ทันที ไม่ต้องเขียนโค้ด ไม่ต้องรอทีม IT</p>
+<p>แต่จุดสำคัญของหน้านี้ไม่ใช่ความเร็ว — คือการทำให้ AI <strong>แสดงวิธีคิดออกมาก่อน</strong> เพื่อให้เราตรวจได้ว่ามันคำนวณถูกจริงไหม</p>
+<p><strong>เครื่องมือที่ใช้:</strong> <a href="https://claude.ai">Claude</a> — เพราะรันโค้ดวิเคราะห์ได้จริง ไม่ใช่แค่คุยเรื่องข้อมูล</p>
+<hr />
+<h2 id="_1">ก่อนเริ่ม: เตรียมไฟล์ให้ปลอดภัย<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">ก่อนอัปโหลดข้อมูลจริง</p>
+<p><strong>ลบคอลัมน์ที่มีชื่อ-นามสกุล เลขบัตรประชาชน เบอร์โทร อีเมล หรือข้อมูลที่ระบุตัวบุคคลออกก่อนเสมอ</strong> — หรือใช้ข้อมูลตัวอย่างในการฝึก</p>
+<p>การรวมข้อมูลที่ดูไม่อ่อนไหวหลายอย่างเข้าด้วยกัน (ชื่อ + ตำแหน่ง + เงินเดือน) อาจกลายเป็นข้อมูลส่วนบุคคลที่ PDPA คุ้มครองได้</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">ค่าใช้จ่าย</p>
+<p>งานวิเคราะห์ข้อมูลค่อนข้างเปลือง tokens — ถ้าจะทำเป็นประจำอาจต้องมีงบประมาณซัพพอร์ต</p>
+</div>
+<p><strong>ข้อมูลตัวอย่างสำหรับฝึก:</strong> <a href="https://www.kaggle.com/datasets/prasad22/retail-transactions-dataset">retail transactions dataset จาก Kaggle</a> — ดาวน์โหลดมาเล่นได้เลย</p>
+<hr />
+<h2 id="1-ai">แบบฝึกหัดที่ 1: ให้ AI วางแผนวิเคราะห์ก่อน (ยังไม่ให้สรุป)<a class="headerlink" href="#1-ai" title="Permanent link">&para;</a></h2>
+<p><strong>สถานการณ์:</strong> คุณมีไฟล์ข้อมูลอยู่ในมือ แต่ยังไม่แน่ใจว่าควรดูอะไรบ้าง</p>
+<p>อัปโหลดไฟล์เข้า Claude แล้วใช้ prompt นี้:</p>
+<pre><code class="language-prompt">ฉันมีข้อมูลธุรกรรมร้านค้า มีคอลัมน์ดังนี้: Transaction_ID, Date, Customer_Name,
+Product_Category, Quantity, Unit_Price, Total_Price, Payment_Method, City,
+Store_Type, Discount_Applied
+
+ฉันต้องการเพิ่มกำไรของร้าน ช่วยคิดทีละขั้น (think step-by-step):
+การวิเคราะห์ 3 อย่างแรกที่ฉันควรทำคืออะไร และแต่ละอย่างควรทำกราฟแบบไหน
+</code></pre>
+<div class="ac-gallery ac-gallery-large">
+  <img src="../images/claude-analytics-1.png" alt="Claude วิเคราะห์ข้อมูลและสร้าง dashboard" />
+</div>
+
+<div class="admonition tip">
+<p class="admonition-title">ทำไมต้องถาม 'ควรวิเคราะห์อะไร' ก่อนถาม 'ผลเป็นยังไง'</p>
+<p>ถ้าสั่งให้สรุปเลย AI จะเลือกมุมวิเคราะห์เอง แล้วเราจะไม่รู้ว่ามันมองข้ามอะไร — การให้เสนอแผนก่อนทำให้เราเห็นวิธีคิด และแก้ทิศทางได้ก่อนเสียเวลา</p>
+<p>คำว่า <strong>"think step-by-step"</strong> เป็นเทคนิคที่วงการเรียกว่า <em>chain-of-thought prompting</em> ช่วยลดข้อผิดพลาดในงานที่ต้องใช้เหตุผลหลายขั้น และทำให้เราตรวจตามได้</p>
+</div>
+<p><strong>บอกเป้าหมายทางธุรกิจ ไม่ใช่แค่คำสั่งเทคนิค</strong> — "อยากเพิ่มกำไร" ได้การวิเคราะห์ที่ตรงกว่า "ทำกราฟให้หน่อย"</p>
+<hr />
+<h2 id="2">แบบฝึกหัดที่ 2: ให้รันจริง แล้วตรวจการคำนวณก่อนเชื่อ<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>เลือกการวิเคราะห์ที่ตรงกับโจทย์จริง แล้วสั่งให้ Claude รันและสร้าง dashboard</p>
+<pre><code class="language-prompt">เอาข้อ [เลือกข้อที่ต้องการ] มาทำจริง โดย:
+- รันการวิเคราะห์และสร้างกราฟตามที่เสนอไว้
+- แสดงตัวเลขกลางด้วย: ยอดรวมและจำนวนแถวของแต่ละกลุ่ม
+- ถ้ามีแถวที่ข้อมูลไม่ครบหรือผิดปกติ ให้บอกว่ามีกี่แถวและจัดการอย่างไร
+</code></pre>
+<p>Claude รันโค้ดเอง วิเคราะห์เอง แล้วสร้าง interactive dashboard ให้คลิกดูได้เลย</p>
+<p>👉 <a href="https://claude.ai/share/95df7400-6270-4218-801f-ae1e0700c3ea">ดูตัวอย่างผลลัพธ์จริง</a></p>
+<div class="ac-gallery ac-gallery-large">
+  <img src="../images/claude-analytics-2.png" alt="ผลลัพธ์การวิเคราะห์แบบ interactive" />
+</div>
+
+<div class="ac-gallery ac-gallery-large">
+  <img src="../images/claude-analytics-3.png" alt="กราฟที่ Claude สร้างจากข้อมูลจริง" />
+</div>
+
+<div class="ac-gallery ac-gallery-large">
+  <img src="../images/claude-analytics-4.png" alt="ตัวอย่างการวางแผน dashboard" />
+</div>
+
+<h3 id="4">ตรวจ 4 อย่างก่อนเชื่อผลลัพธ์<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>ตรวจอะไร</th>
+<th>ทำยังไง</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ตัวเลขถูกไหม</strong></td>
+<td>เปิดไฟล์ต้นฉบับ sum คอลัมน์เดียวเทียบกับที่ AI บอก — ถ้าตรง ความน่าจะเป็นที่ตัวอื่นถูกก็สูงขึ้นมาก</td>
+</tr>
+<tr>
+<td><strong>ใช้ข้อมูลครบไหม</strong></td>
+<td>ดูจำนวนแถวที่ AI ใช้จริง ถ้าไฟล์มี 5,000 แถวแต่ AI วิเคราะห์ 4,800 แถว แปลว่ามีข้อมูลถูกตัดทิ้งโดยไม่บอก</td>
+</tr>
+<tr>
+<td><strong>กราฟถูกต้องไหม</strong></td>
+<td>เช็คหน่วย ช่วงแกน และว่าเปรียบเทียบสิ่งที่เทียบกันได้จริงไหม — กราฟสวยแต่แกนผิดพบบ่อย</td>
+</tr>
+<tr>
+<td><strong>ข้อสรุปเป็นของใคร</strong></td>
+<td>AI คำนวณถูกไม่ได้แปลว่าตีความถูก การตีความว่า <em>ทำไม</em> และ <em>ควรทำอะไรต่อ</em> ต้องใช้ความรู้หน้างานที่ AI ไม่มี</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Garbage In Garbage Out</p>
+<p>ถ้าข้อมูลที่ป้อนไม่ครบ format ไม่สม่ำเสมอ หรือมีแถวซ้ำ <strong>AI จะวิเคราะห์ต่อไปโดยไม่เตือน</strong> — ผลลัพธ์จะดูน่าเชื่อถือทั้งที่ผิดตั้งแต่ต้นทาง</p>
+</div>
+<p><strong>ถ้าผลไม่ตรงที่คาด ให้ถามกลับว่า "คำนวณจากอะไร"</strong> แทนที่จะสั่งใหม่ทั้งหมด — จะได้เห็นว่าความผิดพลาดอยู่ที่ข้อมูล ที่การตีความโจทย์ หรือที่การคำนวณ</p>
+<hr />
+<h2 id="kpi-dashboard">ต่อยอด: วางแผน KPI และ Dashboard ก่อนมีข้อมูล<a class="headerlink" href="#kpi-dashboard" title="Permanent link">&para;</a></h2>
+<p>AI ช่วยได้ตั้งแต่ขั้นวางแผนว่าจะวัดอะไร ไม่ใช่แค่วิเคราะห์ข้อมูลที่มีอยู่แล้ว</p>
+<pre><code class="language-prompt">ฉันเป็น [ตำแหน่ง] ที่ [หน่วยงาน] ดูแล [ขอบเขตงาน]
+
+ข้อมูลที่เรามีอยู่:
+1. [ประเภทข้อมูลที่ 1 — เก็บอะไร ความถี่แค่ไหน]
+2. [ประเภทข้อมูลที่ 2]
+3. [ประเภทข้อมูลที่ 3]
+
+ช่วยคิดทีละขั้น: KPI อะไรบ้างที่เราควรติดตามเพื่อวัด [เป้าหมาย]
+และ dashboard ควรมีหน้าตาอย่างไร แสดงอะไรบ้าง
+</code></pre>
+<hr />
+<h2 id="_2">สรุป<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">หลักการใช้ให้ถูกต้อง</p>
+<ol>
+<li><strong>เลือกเครื่องมือที่คำนวณจริง</strong> — chatbot ที่ไม่มี code execution จะให้ตัวเลขที่ดูสมเหตุสมผลแต่ไม่ได้คำนวณจริง</li>
+<li><strong>ให้ AI เสนอแผนก่อน แล้วเราเลือก</strong> — ไม่ปล่อยให้มันตัดสินใจแทนว่าจะดูมุมไหน</li>
+<li><strong>ขอตัวเลขกลาง ไม่ใช่แค่ข้อสรุป</strong> — "แสดงยอดรวมและจำนวนแถวด้วย" ทำให้ตรวจสอบได้</li>
+<li><strong>เช็คตัวเลขอย่างน้อย 1 ตัวด้วยมือเสมอ</strong> — ใช้เวลาไม่ถึงนาที และเป็นการตรวจที่คุ้มที่สุด</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">สิ่งที่ไม่ควรทำ</p>
+<ul>
+<li><strong>อัปโหลดข้อมูลที่มีชื่อลูกค้า นักศึกษา หรือพนักงาน</strong> เข้าเครื่องมือที่องค์กรยังไม่ได้อนุมัติ</li>
+<li><strong>เชื่อ insight โดยไม่เช็คการคำนวณ</strong> — โดยเฉพาะยอดรวมและเปอร์เซ็นต์การเติบโต</li>
+<li><strong>มองการตีความของ AI เป็นข้อสรุป</strong> — มันคือจุดเริ่มต้นของดุลยพินิจทางวิชาชีพ ไม่ใช่คำตอบสุดท้าย</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
