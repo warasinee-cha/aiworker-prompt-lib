@@ -1,0 +1,36 @@
+site_name: AI Worker - Prompt Lib
+site_url: https://warasinee-cha.github.io/aiworker-prompt-lib/
+
+theme:
+  name: material
+  palette:
+    primary: amber
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - toc:
+      permalink: true
+      toc_depth: 2
+
+nav:
+  - Home: index.md
+  - เริ่มต้น:
+      - เครื่องมือ AI ที่ควรรู้จัก: main-tools.md
+      - พูดกับ AI แทนการพิมพ์: talk-to-ai.md
+  - 8 งานที่ต้องใช้ AI ให้เป็น:
+      - 1. ร่างข้อความสื่อสาร: drafting.md
+      - 2. จัดการบันทึกการประชุม: meetings.md
+      - 3. ทำสไลด์นำเสนอ: presentations.md
+      - 4. วิเคราะห์ข้อมูล: data-analysis.md
+      - 5. ร่างเอกสารยาว: long-documents.md
+      - 6. คิดและตัดสินใจ: decisions.md
+      - 7. ค้นคว้าหาข้อมูล: research.md
+      - 8. สร้างชิ้นงาน: creations.md
+  - ตัวอย่างผลงาน:
+      - สไลด์ที่สร้างด้วย AI: presentations-showcase.md
+
+extra_css:
+  - stylesheets/extra.css
