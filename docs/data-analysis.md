@@ -63,7 +63,7 @@ Store_Type, Discount_Applied
 
 Claude รันโค้ดเอง วิเคราะห์เอง แล้วสร้าง interactive dashboard ให้คลิกดูได้เลย
 
-👉 [ดูตัวอย่างผลลัพธ์จริง](https://claude.ai/share/95df7400-6270-4218-801f-ae1e0700c3ea)
+👉 [ดู Claude Conversation ตัวอย่าง](https://claude.ai/share/95df7400-6270-4218-801f-ae1e0700c3ea) — บทสนทนาเต็มตั้งแต่อัปโหลดไฟล์จนได้ dashboard
 
 <div class="ac-gallery ac-gallery-large">
   <img src="../images/claude-analytics-2.png" alt="ผลลัพธ์การวิเคราะห์แบบ interactive" />
