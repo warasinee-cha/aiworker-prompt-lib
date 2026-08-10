@@ -1,0 +1,1049 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warasinee-cha.github.io/aiworker-prompt-lib/ai-policy-structure-and-requirements/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>โครงสร้างเอกสาร + Requirements: นโยบายการใช้ AI สำหรับบุคลากรมหาวิทยาลัย - AI Worker - Prompt Lib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#requirements-ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-header__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Worker - Prompt Lib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              โครงสร้างเอกสาร + Requirements: นโยบายการใช้ AI สำหรับบุคลากรมหาวิทยาลัย
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Worker - Prompt Lib" class="md-nav__button md-logo" aria-label="AI Worker - Prompt Lib" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Worker - Prompt Lib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เริ่มต้น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    เริ่มต้น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    เครื่องมือ AI ที่ควรรู้จัก
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talk-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    พูดกับ AI แทนการพิมพ์
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8 งานที่ต้องใช้ AI ให้เป็น
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drafting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ร่างข้อความสื่อสาร
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. จัดการบันทึกการประชุม
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. ทำสไลด์นำเสนอ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. วิเคราะห์ข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ค้นคว้าหาข้อมูล
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. ร่างเอกสารยาว
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. คิดและตัดสินใจ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. สร้างชิ้นงาน
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ตัวอย่างผลงาน
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ตัวอย่างผลงาน
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentations-showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    สไลด์ที่สร้างด้วย AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ส่วนที่ 1: โครงสร้างเอกสาร
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ส่วนที่ 2: Requirements ต่อหัวข้อ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ส่วนที่ 3: ช่องว่างข้อมูลที่กระทบทั้งเอกสาร (สรุปข้าม section)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="requirements-ai">โครงสร้างเอกสาร + Requirements: นโยบายการใช้ AI สำหรับบุคลากรมหาวิทยาลัย<a class="headerlink" href="#requirements-ai" title="Permanent link">&para;</a></h1>
+<p><strong>สถานะ:</strong> ยังไม่มีการเขียนเนื้อหานโยบาย — เอกสารนี้เป็นแค่โครงและรายการสิ่งที่ต้องเตรียมก่อนเขียนจริง
+<strong>อ้างอิงจาก:</strong> <code>ai-usage-policy-research-report.md</code> (ค้นคว้า 10 ส.ค. 2569)
+<strong>ผู้อ่าน:</strong> บุคลากรทุกระดับ ทั้งสายวิชาการและสายสนับสนุน | <strong>ผู้อนุมัติ:</strong> คณะกรรมการบริหารมหาวิทยาลัย</p>
+<hr />
+<h2 id="1">ส่วนที่ 1: โครงสร้างเอกสาร<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>เรียงตามรูปแบบประกาศ/ระเบียบของมหาวิทยาลัยไทยทั่วไป (ดูตัวอย่าง มข., NIDA ในรีพอร์ท) ผสมกับเนื้อหาที่พบว่าจำเป็นจากตัวอย่างต่างประเทศ (Columbia, USC) และกรอบ UNESCO</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>หัวข้อ</th>
+<th>หน้าที่ในเอกสาร</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>ส่วนหัวประกาศ + อำนาจในการออกประกาศ</td>
+<td>ระบุว่าออกโดยใคร อาศัยอำนาจตามข้อบังคับ/ระเบียบใด — ให้เอกสารมีสถานะทางการที่บังคับใช้ได้จริง</td>
+</tr>
+<tr>
+<td>1</td>
+<td>หลักการและเหตุผล</td>
+<td>อธิบายว่าทำไมมหาวิทยาลัยต้องมีนโยบายนี้ตอนนี้ (บริบทกฎหมาย + แนวโน้มกำกับดูแล + ตัวอย่างมหาวิทยาลัยอื่น)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>วัตถุประสงค์</td>
+<td>กำหนดเป้าหมายของนโยบาย (เช่น ส่งเสริมการใช้ AI อย่างมีประสิทธิภาพ + ป้องกันความเสี่ยงด้านข้อมูล/จริยธรรม)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ขอบเขตการบังคับใช้</td>
+<td>ระบุว่าใช้กับใคร (บุคลากรระดับใด สายไหน) ครอบคลุมกิจกรรมอะไรบ้าง (สอน วิจัย บริหาร) และไม่ครอบคลุมอะไร</td>
+</tr>
+<tr>
+<td>4</td>
+<td>คำนิยาม</td>
+<td>นิยามศัพท์ เช่น "AI", "Generative AI", "ข้อมูลส่วนบุคคล", "เครื่องมือที่ได้รับอนุมัติ" เพื่อไม่ให้ตีความคลาดเคลื่อนภายหลัง</td>
+</tr>
+<tr>
+<td>5</td>
+<td>หลักการทั่วไปในการใช้ AI</td>
+<td>วางกรอบพฤติกรรมเชิงจริยธรรมที่ใช้ได้กับทุกสถานการณ์ (ต้องตรวจสอบผลลัพธ์ก่อนใช้จริง, มนุษย์ต้องเป็นผู้รับผิดชอบสุดท้าย, ห้ามพึ่งพา AI เกินควร)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>การจำแนกประเภทข้อมูล x เครื่องมือ AI ที่อนุญาต</td>
+<td>หัวใจของนโยบาย — จับคู่ "ระดับความอ่อนไหวของข้อมูล" กับ "ประเภทเครื่องมือ AI ที่ใช้ได้" (แนวทางแบบ USC/NIDA)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>แนวปฏิบัติเฉพาะด้าน</td>
+<td>แยกคำแนะนำตามลักษณะงาน: (ก) งานวิชาการ/การสอน/วิจัย (ข) งานบริหาร/ธุรการ/ทรัพยากรบุคคล เพราะความเสี่ยงและข้อมูลที่เกี่ยวข้องต่างกัน</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ข้อห้ามโดยเฉพาะ</td>
+<td>รายการสิ่งที่ห้ามทำชัดเจน (เช่น ห้ามใส่ข้อมูลอ่อนไหวในเครื่องมือสาธารณะ, ห้ามอ้างว่า AI เป็นผู้เขียนงานวิจัย) — ใช้ตัดสินกรณีฝ่าฝืนได้ทันที</td>
+</tr>
+<tr>
+<td>9</td>
+<td>การเปิดเผยการใช้ AI และการอ้างอิงแหล่งที่มา</td>
+<td>กำหนดว่าเมื่อไหร่ต้องแจ้ง/ระบุว่าใช้ AI ช่วยทำงาน</td>
+</tr>
+<tr>
+<td>10</td>
+<td>กระบวนการขออนุมัติ/ขึ้นทะเบียนเครื่องมือ AI ใหม่</td>
+<td>บอกบุคลากรว่าถ้าอยากใช้เครื่องมือที่ไม่อยู่ในรายการอนุมัติ ต้องทำอย่างไร ติดต่อใคร</td>
+</tr>
+<tr>
+<td>11</td>
+<td>บทบาทและความรับผิดชอบ</td>
+<td>ระบุว่าใครทำหน้าที่อะไร (บุคลากร / ผู้บังคับบัญชา / ฝ่าย IT / เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO) / คณะกรรมการกำกับดูแล)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>การรายงานเหตุการณ์และข้อมูลรั่วไหล</td>
+<td>ขั้นตอนเมื่อเกิดเหตุ (ใช้ AI แล้วข้อมูลหลุด, พบผลลัพธ์ผิดพลาดร้ายแรง) ต้องแจ้งใคร ภายในเวลาเท่าไร</td>
+</tr>
+<tr>
+<td>13</td>
+<td>บทลงโทษกรณีฝ่าฝืน</td>
+<td>เชื่อมโยงการฝ่าฝืนนโยบายนี้เข้ากับระเบียบวินัยที่มีอยู่แล้วของมหาวิทยาลัย</td>
+</tr>
+<tr>
+<td>14</td>
+<td>การทบทวนและปรับปรุงนโยบาย</td>
+<td>กำหนดรอบทบทวน (เพราะสถานการณ์กฎหมาย/เทคโนโลยีเปลี่ยนเร็ว) และผู้รับผิดชอบ</td>
+</tr>
+<tr>
+<td>15</td>
+<td>เอกสารอ้างอิงและกฎหมายที่เกี่ยวข้อง</td>
+<td>รายการกฎหมาย/แนวปฏิบัติที่นโยบายนี้อิงตาม เพื่อความโปร่งใสและใช้ตรวจสอบย้อนหลังได้</td>
+</tr>
+<tr>
+<td>16</td>
+<td>วันมีผลบังคับใช้และผู้ลงนาม</td>
+<td>ปิดท้ายให้เอกสารมีผลทางการ</td>
+</tr>
+</tbody>
+</table>
+<p><strong>หมายเหตุ:</strong> ลำดับนี้ไล่จาก "ทำไมต้องมี" → "ใช้กับใคร/นิยามอะไร" → "หลักการ" → "กติกาเชิงปฏิบัติ (ส่วนที่ยาวและสำคัญที่สุด)" → "กลไกกำกับดูแล/บทลงโทษ" → "การดูแลเอกสารระยะยาว" ซึ่งเป็นโครงที่ใช้ได้ทั้งกับผู้อ่านที่เป็นบุคลากรทั่วไป (อ่านข้าม 0-5 ไปเน้น 6-9) และคณะกรรมการบริหารที่ต้องพิจารณาอนุมัติ (ดูภาพรวมความเสี่ยงและกลไกกำกับดูแลใน 10-15)</p>
+<hr />
+<h2 id="2-requirements">ส่วนที่ 2: Requirements ต่อหัวข้อ<a class="headerlink" href="#2-requirements" title="Permanent link">&para;</a></h2>
+<p>สำหรับแต่ละหัวข้อ แยกเป็น 3 กลุ่ม:
+- <strong>(A) มีอยู่แล้วในรีพอร์ทค้นคว้า</strong> — ใช้ได้เลย (แต่บางจุดยัง "ตรวจสอบไม่ได้ 100%" ตามที่รีพอร์ทระบุ ต้องยืนยันซ้ำก่อนอ้างอิงในเอกสารทางการ)
+- <strong>(B) ต้องถามหน่วยงานภายใน</strong> — IT / นิติการ / ทรัพยากรบุคคล (HR)
+- <strong>(C) เป็นการตัดสินใจเชิงนโยบายที่มหาวิทยาลัยต้องกำหนดเอง</strong> — ไม่มีคำตอบสำเร็จรูปจากภายนอก</p>
+<h3 id="0">0. ส่วนหัวประกาศ + อำนาจในการออกประกาศ<a class="headerlink" href="#0" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ไม่มี — รีพอร์ทไม่ได้ค้นเรื่องโครงสร้างอำนาจการออกประกาศของ มจธ. เอง</li>
+<li><strong>(B)</strong> นิติการ: อาศัยอำนาจตามข้อบังคับ/พ.ร.บ. มจธ. ข้อใดที่ให้คณะกรรมการบริหารออกประกาศลักษณะนี้ได้ และประกาศนี้ควรอยู่ในรูปแบบ "ประกาศมหาวิทยาลัย" หรือ "ระเบียบ" (มีผลบังคับต่างกัน)</li>
+<li><strong>(C)</strong> ไม่มี — เป็นข้อเท็จจริงเชิงกฎหมาย/ระเบียบภายใน ไม่ใช่ทางเลือกเชิงนโยบาย</li>
+</ul>
+<h3 id="1_1">1. หลักการและเหตุผล<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีครบ: สถานะนโยบาย AI ของมหาวิทยาลัยไทยอื่น (มข., NIDA, มหิดล-รามาฯ, ธรรมศาสตร์-สหเวชฯ), แนวโน้ม ETDA จะเปลี่ยนจากสมัครใจเป็นบังคับสำหรับหน่วยงานรัฐ (ยังไม่บังคับจริง), สถานะกฎหมายปัจจุบัน (PDPA + พ.ร.บ.คอมพิวเตอร์)</li>
+<li><strong>(B)</strong> ไม่มีที่จำเป็นสำหรับหัวข้อนี้โดยตรง</li>
+<li><strong>(C)</strong> มหาวิทยาลัยต้องตัดสินใจว่าจะ "วางตัวเป็นผู้นำ" (ออกก่อนถูกบังคับ) หรือ "ทำตามเกณฑ์ขั้นต่ำ" — กำหนดโทนของทั้งเอกสาร</li>
+</ul>
+<h3 id="2">2. วัตถุประสงค์<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ไม่มีตรงๆ — รีพอร์ทให้ข้อมูลบริบทแต่ไม่ได้กำหนดวัตถุประสงค์ให้</li>
+<li><strong>(B)</strong> ไม่มี</li>
+<li><strong>(C)</strong> ทั้งหมด — ผู้บริหารต้องกำหนดเองว่าน้ำหนักอยู่ที่ "ส่งเสริมการใช้งานเพื่อประสิทธิภาพ" มากแค่ไหน เทียบกับ "ควบคุมความเสี่ยง" มากแค่ไหน</li>
+</ul>
+<h3 id="3">3. ขอบเขตการบังคับใช้<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีตัวอย่างเทียบ: มข. ใช้ "ทุกส่วนงาน ทุกหลักสูตร ทุกภาคส่วน"; NIDA ใช้ทั้งนักศึกษาและบุคลากร; USC/Columbia ใช้ทั้งบุคลากร-คณาจารย์-นักศึกษา-นักวิจัย</li>
+<li><strong>(B)</strong> HR: มีบุคลากรกลุ่มไหนที่สถานะพิเศษ (ลูกจ้างชั่วคราว, ผู้รับจ้างภายนอก/outsource, อาจารย์พิเศษ) ที่ต้องตัดสินใจว่านโยบายนี้ครอบคลุมหรือไม่ / นิติการ: สถานะทางกฎหมายของกลุ่มเหล่านี้ต่างจากบุคลากรประจำอย่างไร</li>
+<li><strong>(C)</strong> จะรวมนักศึกษาไว้ในนโยบายเดียวกัน หรือแยกเอกสารนักศึกษาต่างหาก (โจทย์นี้ระบุแค่ "บุคลากร" แล้ว) — ต้องยืนยันขอบเขตให้ชัดตั้งแต่ต้น</li>
+</ul>
+<h3 id="4">4. คำนิยาม<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> บางส่วน: นิยามศัพท์ที่ใช้ในกฎหมาย PDPA (เช่น "ข้อมูลส่วนบุคคล", "ผู้ควบคุมข้อมูล/ผู้ประมวลผลข้อมูล" ตาม พ.ร.บ.) ปรากฏโดยอ้อมในรีพอร์ท แต่ไม่ได้ยกตัวบทมาเต็ม</li>
+<li><strong>(B)</strong> นิติการ: ขอนิยามที่ตรงตัวบท PDPA และ พ.ร.บ.คอมพิวเตอร์ ฉบับล่าสุดเพื่อความถูกต้อง (รีพอร์ทเตือนว่าตัวเลขค่าปรับ/รายละเอียดบางจุดมีความไม่ตรงกันระหว่างแหล่งข่าว ควรตรวจกับตัวบทจริง) / IT: นิยามเชิงเทคนิคของ "เครื่องมือ AI", "Generative AI", "เครื่องมือที่ได้รับอนุมัติ" ให้ตรงกับสถาปัตยกรรมระบบที่มหาวิทยาลัยมีจริง</li>
+<li><strong>(C)</strong> จะแบ่งระดับ "เครื่องมือ AI สาธารณะ" vs "เครื่องมือที่มหาวิทยาลัยจัดหา/อนุมัติ" กี่ระดับ — เป็นทางเลือกออกแบบ ไม่ใช่ข้อเท็จจริงตายตัว</li>
+</ul>
+<h3 id="5-ai">5. หลักการทั่วไปในการใช้ AI<a class="headerlink" href="#5-ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีดี: UNESCO Guidance for GenAI in Education and Research ให้แนวทางระดับบุคคล (ต้องรู้เงื่อนไขการใช้งาน, ไม่ใช้ AI ละเมิดสิทธิ/ชื่อเสียงผู้อื่น), หลักการ มข./ธรรมศาสตร์-สหเวชฯ (ตรวจสอบความถูกต้องก่อนใช้จริง, ทุกการตัดสินใจที่ใช้ AI ช่วยต้องมีบุคลากรรับผิดชอบ)</li>
+<li><strong>(B)</strong> ไม่มีที่จำเป็นเพิ่มเติม</li>
+<li><strong>(C)</strong> ระดับความเข้มงวดของหลักการ (เช่น "ห้ามพึ่งพา AI เกินควร" ต้องนิยามเป็นรูปธรรมแค่ไหน) เป็นการตัดสินใจของมหาวิทยาลัย</li>
+</ul>
+<h3 id="6-x-ai">6. การจำแนกประเภทข้อมูล x เครื่องมือ AI ที่อนุญาต<a class="headerlink" href="#6-x-ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีต้นแบบชัดเจน: USC ใช้ 4 ระดับข้อมูล (สาธารณะ/ใช้ภายใน/ลับ/ลับสูงสุด) จับคู่กับประเภทเครื่องมือ; NIDA กำหนดว่าข้อมูลภายใน/ข้อมูลลับต้องใช้เฉพาะแอปที่สถาบันอนุมัติเท่านั้น; มหิดล-รามาฯ ห้ามใส่ข้อมูลระเบียนการศึกษา/วิจัย/พฤติกรรมนักศึกษาใน GenAI ภายนอก</li>
+<li><strong>(B) — สำคัญที่สุดในทั้งเอกสาร:</strong> IT ต้องให้ข้อมูลว่า (1) มจธ. มีการจำแนกชั้นความลับของข้อมูลอยู่แล้วหรือไม่ (ถ้ามีระบบเดิม ต้องใช้ระบบเดียวกัน ไม่สร้างระบบใหม่ซ้อน) (2) มจธ. มี/วางแผนจะมีแพลตฟอร์ม AI ที่จัดหาให้บุคลากรใช้เอง (แบบ ChulaGENIE) หรือไม่ — งบประมาณ ผู้ให้บริการ สถานะเซิร์ฟเวอร์อยู่ในไทยหรือต่างประเทศ (กระทบข้อ PDPA เรื่องส่งข้อมูลข้ามพรมแดน) / นิติการ: ยืนยันว่าประเภทข้อมูลใดของมหาวิทยาลัยเข้าข่าย "ข้อมูลส่วนบุคคลอ่อนไหว" ตาม PDPA (เช่น ข้อมูลสุขภาพนักศึกษา ข้อมูลศาสนา) ที่ต้องเข้มงวดเป็นพิเศษ</li>
+<li><strong>(C)</strong> จำนวนระดับชั้นข้อมูลที่จะใช้ (2/3/4 ระดับ) และเกณฑ์การจับคู่กับเครื่องมือ AI แต่ละประเภท เป็นการออกแบบเฉพาะของมหาวิทยาลัย</li>
+</ul>
+<h3 id="7-vs">7. แนวปฏิบัติเฉพาะด้าน (วิชาการ vs บริหาร)<a class="headerlink" href="#7-vs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ด้านวิชาการมีเยอะ: ห้ามอ้างว่า AI เป็นผู้เขียนงานวิจัย, การปกปิดการใช้ AI ถือเป็นการทุจริตทางวิชาการ (มข./LTIC), ห้ามใส่งานวิจัยที่ยังไม่ตีพิมพ์/ข้อมูลผู้เข้าร่วมวิจัยใน AI (Columbia), นักศึกษามีระดับอนุญาตใช้ AI 5 ระดับตามรายวิชา (มหิดล-รามาฯ — เป็นตัวอย่างเรื่องนักศึกษา อาจไม่ตรงกับบุคลากรโดยตรงแต่ปรับใช้เป็นแนวคิดได้) / ด้านบริหาร: มีน้อยมาก รีพอร์ทเน้นด้านวิชาการเป็นหลัก</li>
+<li><strong>(B)</strong> HR: กระบวนการที่ใช้ AI ช่วยงานบริหารบุคคล (เช่น คัดกรองผู้สมัคร, ประเมินผลงาน) มีระเบียบ HR เดิมที่ต้องสอดคล้องหรือไม่ (เช่น ต้องมีมนุษย์ตัดสินใจสุดท้ายเสมอ) / IT: มีระบบบริหารงาน (เช่น ระบบสารบรรณ การเงิน พัสดุ) ที่กำลังพิจารณานำ AI มาช่วยอยู่แล้วหรือไม่ ต้องรวมอยู่ในนโยบายนี้หรือแยกต่างหาก</li>
+<li><strong>(C)</strong> จะอนุญาตให้ใช้ AI ช่วยงานบริหารบุคคล (เช่น คัดกรองใบสมัครงาน, ประเมินผลปฏิบัติงาน) ได้แค่ไหน — เป็นประเด็นอ่อนไหวที่ต้องตัดสินใจเชิงนโยบายเอง ไม่มีต้นแบบไทยให้อ้างอิง</li>
+</ul>
+<h3 id="8">8. ข้อห้ามโดยเฉพาะ<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีตัวอย่างพร้อมใช้: ห้ามใส่ข้อมูลส่วนบุคคลอ่อนไหว/ข้อมูลลับหน่วยงานในระบบ AI สาธารณะ (มข./LTIC, มหิดล-รามาฯ), ห้าม copy-paste งาน AI แล้วอ้างเป็นผลงานตนเอง (ธรรมศาสตร์-สหเวชฯ), ข้อมูลระดับ "ใช้ภายในเท่านั้น" ขึ้นไปห้ามใส่ในเครื่องมือ AI ส่วนบุคคลโดยเด็ดขาด (USC)</li>
+<li><strong>(B)</strong> นิติการ: ยืนยันว่าข้อห้ามเหล่านี้สอดคล้อง/ไม่ขัดกับระเบียบข้อบังคับอื่นของ มจธ. ที่มีอยู่แล้ว (เช่น ระเบียบจริยธรรมวิจัย ระเบียบจรรยาบรรณ)</li>
+<li><strong>(C)</strong> จะเพิ่มข้อห้ามเฉพาะบริบท มจธ. อะไรอีกหรือไม่ (เช่น ห้ามใช้ AI ตัดเกรด/ให้คะแนนนักศึกษาโดยไม่มีอาจารย์ทบทวน) — ไม่มีต้นแบบบังคับ เป็นทางเลือกของมหาวิทยาลัย</li>
+</ul>
+<h3 id="9-ai">9. การเปิดเผยการใช้ AI และการอ้างอิงแหล่งที่มา<a class="headerlink" href="#9-ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีต้นแบบ: มข. กำหนดให้ต้อง "อ้างอิงแหล่งที่มาของข้อมูลหรือเครื่องมือ AI ที่ใช้" ในงานวิจัย/รายงาน/วิทยานิพนธ์; Columbia บังคับเปิดเผยเมื่อใช้ AI ช่วยผลิตงานเขียน</li>
+<li><strong>(B)</strong> ไม่มีที่จำเป็นเพิ่มเติม</li>
+<li><strong>(C)</strong> ขอบเขตว่า "งานประเภทไหน" ต้องเปิดเผย (เฉพาะงานวิจัย/ตีพิมพ์ หรือรวมถึงเอกสารบริหารภายในด้วย) และรูปแบบการเปิดเผย (เชิงอรรถ, คำแถลง, ระบบขึ้นทะเบียน) เป็นการออกแบบของมหาวิทยาลัย</li>
+</ul>
+<h3 id="10-ai">10. กระบวนการขออนุมัติ/ขึ้นทะเบียนเครื่องมือ AI ใหม่<a class="headerlink" href="#10-ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ไม่มี — รีพอร์ทระบุชัดว่าไม่มีมหาวิทยาลัยไทยที่พบข้อมูลระบุ "ขั้นตอนอนุมัติการใช้เครื่องมืออย่างละเอียด" (แม้แต่ มข. ก็ไม่ได้ระบุ) เป็นช่องว่างที่ต้องออกแบบเอง</li>
+<li><strong>(B) — ต้องถามก่อนเขียนได้จริง:</strong> IT: หน่วยงานไหนมีอำนาจ/ความสามารถประเมินความปลอดภัยเครื่องมือ AI ใหม่ (ฝ่ายความมั่นคงปลอดภัยสารสนเทศ? ศูนย์คอมพิวเตอร์?), ใช้เวลาประเมินเท่าไร, มีเกณฑ์ประเมินอยู่แล้วหรือไม่ / นิติการ: ต้องมีการตรวจสอบสัญญากับผู้ให้บริการ AI ก่อนอนุมัติหรือไม่ (ตาม PDPA มาตรา 40 ที่กำหนดว่าต้องมีสัญญาลายลักษณ์อักษรระบุขอบเขตการประมวลผล)</li>
+<li><strong>(C)</strong> จะให้บุคลากรแต่ละคนขออนุมัติเป็นรายบุคคล หรือขึ้นทะเบียนเป็นรายเครื่องมือระดับมหาวิทยาลัยครั้งเดียวใช้ได้ทั้งองค์กร — เป็นทางเลือกเชิงกระบวนการที่กระทบภาระงานต่างกันมาก</li>
+</ul>
+<h3 id="11">11. บทบาทและความรับผิดชอบ<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีหลักการกว้างๆ: "ทุกการตัดสินใจของฝ่ายบริหารที่ใช้ AI ช่วยต้องมีบุคลากรรับผิดชอบ" (มข./LTIC) — เป็นหลักการ ไม่ใช่โครงสร้างบทบาทที่ชัดเจน</li>
+<li><strong>(B) — ต้องถามทั้ง 3 หน่วยงาน:</strong> IT: มีทีม/ตำแหน่งที่ดูแลความปลอดภัยไซเบอร์และ AI โดยเฉพาะอยู่แล้วหรือไม่ / นิติการ: มี "เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO)" ตาม PDPA แต่งตั้งแล้วหรือยัง ชื่อ/ตำแหน่งคือใคร (เอกสารนี้ต้องอ้างอิงตัวจริงได้) / HR: ผู้บังคับบัญชาแต่ละหน่วยงานมีบทบาทกำกับดูแลการใช้ AI ของลูกน้องอยู่ในระเบียบเดิมหรือไม่</li>
+<li><strong>(C)</strong> จะตั้งคณะกรรมการกำกับดูแล AI ระดับมหาวิทยาลัยใหม่ขึ้นมาโดยเฉพาะ หรือมอบหมายให้คณะกรรมการที่มีอยู่แล้ว (เช่น คณะกรรมการธรรมาภิบาลข้อมูล) รับผิดชอบเพิ่ม — การตัดสินใจเชิงโครงสร้างองค์กร</li>
+</ul>
+<h3 id="12">12. การรายงานเหตุการณ์และข้อมูลรั่วไหล<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีกรอบเวลาจากกฎหมาย: PDPA กำหนดต้องแจ้งเหตุข้อมูลรั่วไหลภายใน 72 ชั่วโมง (มาตรา 40) — แต่รีพอร์ทระบุชัดว่า <strong>ไม่พบกรณีจริงในไทยที่เกี่ยวกับ AI โดยเฉพาะ</strong> (ค้นแล้วไม่พบ ไม่ใช่ไม่มีข้อมูล) จึงไม่มีตัวอย่างกระบวนการรับมือระดับมหาวิทยาลัยให้อ้างอิง</li>
+<li><strong>(B)</strong> IT: มีช่องทาง/ทีม incident response สำหรับเหตุข้อมูลรั่วไหลอยู่แล้วหรือไม่ ต้องใช้ช่องทางเดียวกันหรือแยกเฉพาะ AI / นิติการ: ขั้นตอนแจ้ง สคส. (PDPC) ภายใน 72 ชม. ตามที่กฎหมายกำหนด มจธ. มีขั้นตอนภายในรองรับอยู่แล้วหรือไม่</li>
+<li><strong>(C)</strong> ไม่มีที่ต้องตัดสินใจเพิ่มนอกเหนือจากออกแบบให้สอดคล้องกับ (B)</li>
+</ul>
+<h3 id="13">13. บทลงโทษกรณีฝ่าฝืน<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีตัวอย่างระดับหลักการ: USC ระบุว่าฝ่าฝืนเรื่องข้อมูลถือเป็น "ความผิดวินัยร้ายแรง" (severe disciplinary offense) — แต่เป็นตัวอย่างต่างประเทศ ไม่ใช่กรอบวินัยไทย</li>
+<li><strong>(B) — จำเป็นมาก:</strong> HR/นิติการ: ระเบียบวินัยข้าราชการ/พนักงานมหาวิทยาลัยที่มีอยู่แล้วของ มจธ. ครอบคลุมกรณี "ใช้เครื่องมือดิจิทัลผิดวัตถุประสงค์" อยู่แล้วหรือไม่ นโยบาย AI นี้จะ "อ้างอิงระเบียบเดิม" หรือ "สร้างบทลงโทษใหม่เฉพาะ" — ถ้าสร้างใหม่ต้องผ่านกระบวนการอนุมัติที่ต่างจากประกาศทั่วไปหรือไม่</li>
+<li><strong>(C)</strong> ระดับความรุนแรงของบทลงโทษแต่ละกรณี (เช่น ใส่ข้อมูลอ่อนไหวโดยรู้เท่าไม่ถึงการณ์ vs จงใจปกปิดการใช้ AI ในงานวิจัย) เป็นการตัดสินใจเชิงนโยบาย</li>
+</ul>
+<h3 id="14">14. การทบทวนและปรับปรุงนโยบาย<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีเหตุผลสนับสนุนจากรีพอร์ท: กฎหมาย/แนวปฏิบัติของไทยเปลี่ยนเร็วมากในช่วงนี้ (ร่าง พ.ร.บ. AI, ร่างแนวปฏิบัติ สคส., แนวโน้ม ETDA เปลี่ยนจากสมัครใจเป็นบังคับ) — สนับสนุนว่าควรมีรอบทบทวนถี่กว่าระเบียบทั่วไป</li>
+<li><strong>(B)</strong> ไม่มีที่จำเป็น</li>
+<li><strong>(C)</strong> รอบทบทวน (ทุก 6 เดือน / 1 ปี) และผู้รับผิดชอบกระบวนการทบทวน เป็นการกำหนดเอง</li>
+</ul>
+<h3 id="15">15. เอกสารอ้างอิงและกฎหมายที่เกี่ยวข้อง<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> มีครบสำหรับกฎหมายที่บังคับใช้แล้ว: PDPA (มาตรา 27, 40, กฎเกณฑ์ส่งข้อมูลข้ามประเทศตั้งแต่ 24 มี.ค. 2567), พ.ร.บ.คอมพิวเตอร์ (มาตรา 14(1), 14(5)) — <strong>แต่รีพอร์ทเตือนว่าตัวเลขค่าปรับ/รายละเอียดมีความไม่ตรงกันเล็กน้อยระหว่างแหล่งข่าว ต้องตรวจกับตัวบทจริงก่อนอ้างอิงในเอกสารทางการ</strong></li>
+<li><strong>(B) — บังคับต้องทำก่อนเขียนหัวข้อนี้:</strong> นิติการ: ตรวจสอบตัวบทกฎหมายฉบับปัจจุบันโดยตรง (ไม่ใช้ตัวเลข/รายละเอียดจากรีพอร์ทนี้ทันที) โดยเฉพาะมาตรา 14 พ.ร.บ.คอมพิวเตอร์ ที่รีพอร์ทระบุว่าค่าปรับไม่ตรงกันระหว่างแหล่ง / นิติการ: ยืนยันสถานะร่าง พ.ร.บ. AI และร่างแนวปฏิบัติ สคส. ว่าประกาศใช้แล้วหรือยัง ณ วันที่จะเขียนนโยบายจริง (รีพอร์ทระบุว่า ณ ส.ค. 2569 ยังเป็นร่าง และบางแหล่งข่าวยังยืนยันไม่ได้จากเว็บราชการ)</li>
+<li><strong>(C)</strong> ไม่มี — เป็นข้อเท็จจริงกฎหมาย ไม่ใช่ทางเลือก</li>
+</ul>
+<h3 id="16">16. วันมีผลบังคับใช้และผู้ลงนาม<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ไม่มี</li>
+<li><strong>(B)</strong> นิติการ: รูปแบบการลงนามที่ถูกต้องตามระเบียบงานสารบรรณของ มจธ.</li>
+<li><strong>(C)</strong> วันที่มีผลบังคับใช้ (ทันที / มีช่วงเปลี่ยนผ่านให้บุคลากรปรับตัว) เป็นการตัดสินใจของคณะกรรมการบริหาร</li>
+</ul>
+<hr />
+<h2 id="3-section">ส่วนที่ 3: ช่องว่างข้อมูลที่กระทบทั้งเอกสาร (สรุปข้าม section)<a class="headerlink" href="#3-section" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ไม่มีตัวอย่างกระบวนการอนุมัติเครื่องมือ AI แบบละเอียดจากมหาวิทยาลัยไทยที่ไหนเลย</strong> (รีพอร์ทระบุชัดว่าแม้แต่ มข. ก็ไม่ได้ลงรายละเอียดขั้นตอนนี้) — หมายความว่าหัวข้อ 6 และ 10 ต้องออกแบบขึ้นใหม่เกือบทั้งหมด ไม่มีต้นแบบไทยให้ลอก</li>
+<li><strong>ไม่พบกรณีปัญหาจริงในไทยที่ตรงประเด็น</strong> (การตรวจข้อสอบผิดจริยธรรม, สื่อการสอนละเมิดลิขสิทธิ์, ข้อมูลรั่วไหล, บทลงโทษวินัย) — รีพอร์ทย้ำว่านี่คือ "ค้นแล้วไม่พบ" ไม่ใช่ "ไม่มีอยู่จริง" เพราะกรณีวินัยภายในมักไม่เผยแพร่สู่สาธารณะ จึงไม่ควรอ้างในเอกสารว่า "ไม่เคยเกิดปัญหา" — ควรสอบถาม HR/นิติการตรงๆ ว่าเคยมีกรณีภายในที่ไม่เป็นข่าวหรือไม่</li>
+<li><strong>สถานะกฎหมาย/ร่างกฎหมายหลายจุดยังไม่ยืนยันจากแหล่งราชการโดยตรง</strong> (ร่าง พ.ร.บ. AI ฉบับ 2 ก.ค. 2569, ร่างแนวปฏิบัติ สคส.) — ต้องให้นิติการตรวจสอบสถานะล่าสุดก่อนอ้างอิงในหัวข้อ 1 และ 15 เพราะอาจเปลี่ยนแปลงไปแล้วนับจากวันที่ค้นคว้า</li>
+<li><strong>ไม่มีข้อมูลเนื้อหานโยบายของมหาวิทยาลัยนเรศวรและเกษตรศาสตร์</strong> (พบว่ามีนโยบายแต่อ่านเนื้อหาไม่ได้) — ถ้าต้องการเทียบเคียงเพิ่มเติม ต้องติดต่อสองมหาวิทยาลัยนี้โดยตรง ไม่สามารถอ้างอิงจากรีพอร์ทนี้ได้</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
