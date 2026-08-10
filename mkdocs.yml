@@ -25,9 +25,9 @@ nav:
       - 2. จัดการบันทึกการประชุม: meetings.md
       - 3. ทำสไลด์นำเสนอ: presentations.md
       - 4. วิเคราะห์ข้อมูล: data-analysis.md
-      - 5. ร่างเอกสารยาว: long-documents.md
-      - 6. คิดและตัดสินใจ: decisions.md
-      - 7. ค้นคว้าหาข้อมูล: research.md
+      - 5. ค้นคว้าหาข้อมูล: research.md
+      - 6. ร่างเอกสารยาว: long-documents.md
+      - 7. คิดและตัดสินใจ: decisions.md
       - 8. สร้างชิ้นงาน: creations.md
   - ตัวอย่างผลงาน:
       - สไลด์ที่สร้างด้วย AI: presentations-showcase.md
