@@ -231,5 +231,5 @@
 ---
 
 ??? quote "ลิงก์สำหรับอาจารย์เท่านั้น"
-    บทสนทนา Claude Cowork ที่ใช้สาธิตหน้านี้และหน้า [ร่างเอกสารยาว](long-documents.md) —
+    บทสนทนา Claude Cowork ที่ใช้สาธิตหน้านี้ —
     [เปิดดู session](https://claude.ai/cowork/cse_017YDcfaLk5QqZQo5wnhaicC)
