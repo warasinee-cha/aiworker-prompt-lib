@@ -157,6 +157,8 @@ Typography: Bold, modern sans-serif for headlines and content. Content might be 
 
 👉 ดูตัวอย่างสไลด์จริงที่สร้างด้วย pipeline นี้ได้ที่หน้า [ตัวอย่างสไลด์ที่สร้างด้วย AI](presentations-showcase.md)
 
+👉 [ดู Gemini Conversation ตัวอย่าง](https://gemini.google.com/share/d/1zDSUH21Mg3ApBajylaDzEkSQSIT2oUt4?usp=sharing) — บทสนทนาเต็มตั้งแต่ป้อน outline จนได้สไลด์
+
 ---
 
 ## สรุป: Pipeline ที่ใช้ได้กับทุก presentation
